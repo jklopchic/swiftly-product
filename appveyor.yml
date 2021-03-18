@@ -4,7 +4,7 @@ clone_depth: 10
 environment:
   MAVEN_VERSION: 3.6.3
   matrix:
-    - JAVA_HOME: C:\Program Files\Java\jdk1.8.0
+    - JAVA_HOME: C:\Program Files\Java\jdk16
 install:
   # Prepend Java entry, remove Ruby entry (C:\Ruby193\bin;) from PATH
   - cmd: SET PATH=%JAVA_HOME%\bin;%PATH:C:\Ruby193\bin;=%;
