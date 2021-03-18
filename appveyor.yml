@@ -14,6 +14,6 @@ install:
   - cmd: mvn --version
   - cmd: java -version
 build_script:
-  - ./mvnw -B -V -Prun-its clean verify
+  - mvnw -B -V -Prun-its clean verify
 cache:
   - C:\Users\appveyor\.m2\ -> pom.xml
