@@ -14,6 +14,8 @@ install:
   - cmd: mvn --version
   - cmd: java -version
 build_script:
-  - mvnw -B -V -Prun-its clean verify
+  - mvn clean package -B -Dmaven.test.skip=true
+test_script:
+  - mvn clean install --batch-mode -Pqulice
 cache:
   - C:\Users\appveyor\.m2\ -> pom.xml
