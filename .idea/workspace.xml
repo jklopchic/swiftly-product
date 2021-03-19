@@ -63,7 +63,7 @@
       <recent name="product.parse" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProductCatalogIntegrationServiceTest.ingestShouldReturnValuesFromBulkParse">
+  <component name="RunManager" selected="JUnit.ProductCatalogIntegrationServiceTest">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -108,8 +108,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ProductCatalogIntegrationServiceTest.ingestShouldReturnValuesFromBulkParse" />
         <item itemvalue="JUnit.ProductCatalogIntegrationServiceTest" />
+        <item itemvalue="JUnit.ProductCatalogIntegrationServiceTest.ingestShouldReturnValuesFromBulkParse" />
       </list>
     </recent_temporary>
   </component>
