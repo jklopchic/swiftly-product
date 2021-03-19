@@ -62,8 +62,11 @@
       <recent name="product.parse" />
       <recent name="product" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="product.parse" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.DefaultProductRecordParserTest">
+  <component name="RunManager" selected="JUnit.IntegerParserTest">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -85,6 +88,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="product.parse" />
       <option name="MAIN_CLASS_NAME" value="product.parse.DefaultProductRecordParserTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IntegerParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="swiftly-product" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="product.parse.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="product.parse" />
+      <option name="MAIN_CLASS_NAME" value="product.parse.IntegerParserTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -138,6 +156,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.IntegerParserTest" />
         <item itemvalue="JUnit.DefaultProductRecordParserTest" />
         <item itemvalue="JUnit.StringParserTest" />
         <item itemvalue="JUnit.ProductCatalogIntegrationServiceTest" />
@@ -153,11 +172,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616100972853</updated>
-      <workItem from="1616100974932" duration="14237000" />
+      <workItem from="1616100974932" duration="15050000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/product/parse/IntegerParser.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
