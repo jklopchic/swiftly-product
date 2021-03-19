@@ -1,6 +1,7 @@
-package product.parse;
+package product.parse.unit;
 
 import org.junit.Test;
+import product.parse.unit.StringParser;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;

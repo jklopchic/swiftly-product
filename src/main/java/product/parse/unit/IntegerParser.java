@@ -1,4 +1,6 @@
-package product.parse;
+package product.parse.unit;
+
+import product.parse.ProductParseException;
 
 public class IntegerParser {
 

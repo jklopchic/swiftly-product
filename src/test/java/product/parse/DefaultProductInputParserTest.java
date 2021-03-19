@@ -2,7 +2,8 @@ package product.parse;
 
 import org.junit.Test;
 import product.model.ProductInputData;
-import product.model.ProductRecord;
+import product.parse.unit.IntegerParser;
+import product.parse.unit.StringParser;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;

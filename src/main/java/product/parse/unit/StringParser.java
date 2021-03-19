@@ -1,4 +1,4 @@
-package product.parse;
+package product.parse.unit;
 
 public class StringParser {
 

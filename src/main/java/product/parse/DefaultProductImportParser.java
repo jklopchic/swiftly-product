@@ -1,6 +1,8 @@
 package product.parse;
 
 import product.model.ProductInputData;
+import product.parse.unit.IntegerParser;
+import product.parse.unit.StringParser;
 
 public class DefaultProductImportParser implements ProductInputParser {
 
