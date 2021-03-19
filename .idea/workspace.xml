@@ -14,9 +14,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -66,7 +66,7 @@
       <recent name="product.parse" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DefaultProductRecordParserTest.parserShouldSetProductId">
+  <component name="RunManager" selected="JUnit.All in swiftly-product">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -78,7 +78,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DefaultProductRecordParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in swiftly-product" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="swiftly-product" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DefaultProductInputParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swiftly-product" />
       <extension name="coverage">
         <pattern>
@@ -87,13 +95,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="product.parse" />
-      <option name="MAIN_CLASS_NAME" value="product.parse.DefaultProductRecordParserTest" />
+      <option name="MAIN_CLASS_NAME" value="product.parse.DefaultProductInputParserTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DefaultProductRecordParserTest.parserShouldSetProductId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DefaultProductInputParserTest.parserShouldSetProductId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swiftly-product" />
       <extension name="coverage">
         <pattern>
@@ -102,66 +110,51 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="product.parse" />
-      <option name="MAIN_CLASS_NAME" value="product.parse.DefaultProductRecordParserTest" />
+      <option name="MAIN_CLASS_NAME" value="product.parse.DefaultProductInputParserTest" />
       <option name="METHOD_NAME" value="parserShouldSetProductId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DefaultProductRecordParserTest.parserShouldSetProductSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductCatalogIntegrationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swiftly-product" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="product.parse.*" />
+          <option name="PATTERN" value="product.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="product.parse" />
-      <option name="MAIN_CLASS_NAME" value="product.parse.DefaultProductRecordParserTest" />
-      <option name="METHOD_NAME" value="parserShouldSetProductSize" />
+      <option name="PACKAGE_NAME" value="product" />
+      <option name="MAIN_CLASS_NAME" value="product.ProductCatalogIntegrationServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductCatalogIntegrationServiceTest.ingestShouldReturnValuesFromBulkParseCalls" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="swiftly-product" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="product" />
+      <option name="MAIN_CLASS_NAME" value="product.ProductCatalogIntegrationServiceTest" />
+      <option name="METHOD_NAME" value="ingestShouldReturnValuesFromBulkParseCalls" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IntegerParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="swiftly-product" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="product.parse.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="product.parse" />
-      <option name="MAIN_CLASS_NAME" value="product.parse.IntegerParserTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StringParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="swiftly-product" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="product.parse.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="product.parse" />
-      <option name="MAIN_CLASS_NAME" value="product.parse.StringParserTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DefaultProductRecordParserTest.parserShouldSetProductId" />
-        <item itemvalue="JUnit.DefaultProductRecordParserTest.parserShouldSetProductSize" />
-        <item itemvalue="JUnit.DefaultProductRecordParserTest" />
-        <item itemvalue="JUnit.IntegerParserTest" />
-        <item itemvalue="JUnit.StringParserTest" />
+        <item itemvalue="JUnit.All in swiftly-product" />
+        <item itemvalue="JUnit.DefaultProductInputParserTest" />
+        <item itemvalue="JUnit.ProductCatalogIntegrationServiceTest" />
+        <item itemvalue="JUnit.ProductCatalogIntegrationServiceTest.ingestShouldReturnValuesFromBulkParseCalls" />
+        <item itemvalue="JUnit.DefaultProductInputParserTest.parserShouldSetProductId" />
       </list>
     </recent_temporary>
   </component>
@@ -173,7 +166,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616100972853</updated>
-      <workItem from="1616100974932" duration="16075000" />
+      <workItem from="1616100974932" duration="18349000" />
     </task>
     <servers />
   </component>

@@ -1,19 +1,18 @@
 package product.parse;
 
 import product.model.ProductInputData;
-import product.model.ProductRecord;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public interface ProductRecordParser {
+public interface ProductInputParser {
 
-    ProductRecord parse(final ProductInputData input);
+    ProductInputData parse(final String input);
 
-    default List<ProductRecord> bulkParse(final List<ProductInputData> input) {
-        final List<ProductRecord> list = new ArrayList<>();
+    default List<ProductInputData> bulkParse(final List<String> input) {
+        final List<ProductInputData> list = new ArrayList<>();
 
-        for (final ProductInputData line : input) {
+        for (final String line : input) {
             try {
                 list.add(parse(line));
             } catch (final ProductParseException e) {
