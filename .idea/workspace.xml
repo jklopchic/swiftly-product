@@ -63,13 +63,28 @@
       <recent name="product" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StringParserTest">
+  <component name="RunManager" selected="JUnit.DefaultProductRecordParserTest">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DefaultProductRecordParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="swiftly-product" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="product.parse.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="product.parse" />
+      <option name="MAIN_CLASS_NAME" value="product.parse.DefaultProductRecordParserTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -123,6 +138,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DefaultProductRecordParserTest" />
         <item itemvalue="JUnit.StringParserTest" />
         <item itemvalue="JUnit.ProductCatalogIntegrationServiceTest" />
         <item itemvalue="JUnit.ProductCatalogIntegrationServiceTest.ingestShouldReturnValuesFromBulkParse" />
@@ -137,7 +153,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616100972853</updated>
-      <workItem from="1616100974932" duration="12375000" />
+      <workItem from="1616100974932" duration="14237000" />
     </task>
     <servers />
   </component>

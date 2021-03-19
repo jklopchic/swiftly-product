@@ -12,7 +12,7 @@ public class ProductRecord {
     private final String productSize;
     private final Double taxRate;
 
-    public ProductRecord(final int productId,
+    public ProductRecord(final Integer productId,
                          final String description,
                          final String displayPrice,
                          final Double calculatorPrice,
@@ -68,7 +68,7 @@ public class ProductRecord {
         return taxRate;
     }
 
-    class Builder {
+    public static class Builder {
         Integer productId;
         String description;
         String displayPrice;
