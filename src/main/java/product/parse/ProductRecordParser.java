@@ -5,13 +5,11 @@ import product.model.ProductRecord;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ProductRecordParser {
+public interface ProductRecordParser {
 
-    public ProductRecord parse(final String input) {
-        return null;
-    }
+    ProductRecord parse(final String input);
 
-    public List<ProductRecord> bulkParse(final List<String> input) {
+    default List<ProductRecord> bulkParse(final List<String> input) {
         return input.stream()
                 .map(line -> parse(line))
                 .collect(Collectors.toList());
