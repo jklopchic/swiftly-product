@@ -31,7 +31,7 @@ public class DefaultProductRecordTransformer implements ProductRecordTransformer
 
         record.description(input.getStringValue(ProductDescription));
 
-        record.prices(pricesTransformer.getPrices(input));
+        record.prices(pricesTransformer.transformPrices(input));
 
         record.unitOfMeasure(getUnitOfMeasure(input.getFlags()));
 

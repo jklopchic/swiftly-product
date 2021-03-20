@@ -16,7 +16,7 @@ public class ProductPricesTransformer {
         
     }
 
-    public ProductPrices getPrices(final ProductInputData inputData) {
+    public ProductPrices transformPrices(final ProductInputData inputData) {
         String displayPrice = "";
         double calculatorPrice = 0;
         String saleDisplayPrice = "";
