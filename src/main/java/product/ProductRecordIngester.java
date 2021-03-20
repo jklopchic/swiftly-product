@@ -48,8 +48,6 @@ public class ProductRecordIngester {
 
         final List<ProductRecord> records = recordParser.bulkTransform(inputData);
 
-        publisher.publishProducts(records);
-
         return records;
     }
 
