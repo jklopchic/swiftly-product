@@ -3,7 +3,6 @@ package product.transform;
 import org.junit.Before;
 import org.junit.Test;
 import product.model.ProductInputData;
-import product.model.ProductInputField;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -15,7 +14,9 @@ import static product.model.ProductInputField.*;
 
 public class ProductPricesTransformerTest {
     
-    private final DefaultProductPricesTransformer transformer = DefaultProductPricesTransformer.construct();
+    private int roundingDecimals = 4;
+    
+    private final DefaultProductPricesTransformer transformer = DefaultProductPricesTransformer.construct(roundingDecimals);
 
     private ProductInputData inputData = mock(ProductInputData.class);
     
@@ -107,6 +108,7 @@ public class ProductPricesTransformerTest {
 
     @Test
     public void shouldTransformRegularSplitCalculatorPriceWithLargeQuantity() {
+        //rounds to 4 decimals
         final double expected = 2183.4061;
 
         given(inputData.getIntegerValue(RegularSplitPrice)).willReturn(99999999);

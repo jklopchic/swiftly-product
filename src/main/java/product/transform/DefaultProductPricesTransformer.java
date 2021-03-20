@@ -10,12 +10,15 @@ import static product.model.ProductInputField.*;
 
 public class DefaultProductPricesTransformer implements ProductPricesTransformer {
     
-    public static DefaultProductPricesTransformer construct() {
-        return new DefaultProductPricesTransformer();
+    private final int roundingDecimalPlaces;
+    
+    public static DefaultProductPricesTransformer construct(final int roundingDecimalPlaces) {
+        return new DefaultProductPricesTransformer(roundingDecimalPlaces);
     }
     
-    private DefaultProductPricesTransformer() {
-        
+    private DefaultProductPricesTransformer(final int roundingDecimalPlaces) {
+
+        this.roundingDecimalPlaces = roundingDecimalPlaces;
     }
     
     /*
@@ -45,7 +48,7 @@ public class DefaultProductPricesTransformer implements ProductPricesTransformer
             calculatorPrice = eachPrice;
         } else if(regularSplitPriceInCents != 0) {
             final double splitPrice = regularSplitPriceInCents / 100.00;
-            final double calculatedSplitPrice = round(splitPrice / regularSplitQuantity, 4);
+            final double calculatedSplitPrice = round(splitPrice / regularSplitQuantity, roundingDecimalPlaces;
 
             displayPrice = formatSplit(splitPrice, regularSplitQuantity);
             calculatorPrice = calculatedSplitPrice;
@@ -59,9 +62,9 @@ public class DefaultProductPricesTransformer implements ProductPricesTransformer
 
             saleDisplayPrice = formatEaches(eachPrice);
             saleCalculatorPrice = eachPrice;
-        } else if(saleSplitPriceInCents!= 0) {
-            final double splitPrice = saleSplitPriceInCents/ 100.00;
-            final double calculatedSplitPrice = round(splitPrice / saleSplitQuantity, 4);
+        } else if(saleSplitPriceInCents != 0) {
+            final double splitPrice = saleSplitPriceInCents / 100.00;
+            final double calculatedSplitPrice = round(splitPrice / saleSplitQuantity, roundingDecimalPlaces);
 
             saleDisplayPrice = formatSplit(splitPrice, saleSplitQuantity);
             saleCalculatorPrice = calculatedSplitPrice;

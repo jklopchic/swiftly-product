@@ -24,7 +24,7 @@ public class ProductRecordIngestorFactory {
         final StringParser stringParser = StringParser.construct();
         final IntegerParser integerParser = IntegerParser.construct();
         final FlagsParser flagsParser = FlagsParser.construct();
-        final DefaultProductPricesTransformer productPricesTransformer = DefaultProductPricesTransformer.construct();
+        final DefaultProductPricesTransformer productPricesTransformer = DefaultProductPricesTransformer.construct(ProductRecordIngester.DEFAULT_PRICE_ROUNDING_DECIMALS);
 
         final ProductInputParser inputParser = DefaultProductInputParser.construct(stringParser, integerParser, flagsParser);
         final ProductRecordTransformer recordParser = DefaultProductRecordTransformer.construct(ProductRecordIngester.DEFAULT_TAX_RATE, productPricesTransformer);

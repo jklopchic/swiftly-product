@@ -75,7 +75,7 @@
       <recent name="product.parse" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProductRecordIngesterTest">
+  <component name="RunManager" selected="JUnit.All in swiftly-product">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="product.Main" />
       <module name="swiftly-product" />
@@ -156,8 +156,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ProductRecordIngesterTest" />
         <item itemvalue="JUnit.All in swiftly-product" />
+        <item itemvalue="JUnit.ProductRecordIngesterTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ProductPricesTransformerTest" />
         <item itemvalue="JUnit.ProductPricesTransformerTest.shouldTransformRegularSplitPriceWithLargeQuantity" />
@@ -172,7 +172,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616100972853</updated>
-      <workItem from="1616100974932" duration="37766000" />
+      <workItem from="1616100974932" duration="38682000" />
     </task>
     <servers />
   </component>

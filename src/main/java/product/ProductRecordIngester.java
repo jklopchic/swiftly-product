@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 public class ProductRecordIngester {
     
     public static final double DEFAULT_TAX_RATE = 7.775;
+    public static final int DEFAULT_PRICE_ROUNDING_DECIMALS = 4;
 
     private final ProductInputParser inputParser;
     private final ProductRecordTransformer recordParser;
