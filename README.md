@@ -8,8 +8,12 @@ This project defines a library to be used to parse and ingest product data, with
 
 ## Usage
 
-Hypothetically, this would be available via maven, importing swiftly-product as a dependency. Not currently published.
+This is a maven project that you should be able to import by loading its pom.xml file.
 
-The input model is defined in the requirements (which I would normally link, but that seems like at least potentially a bad idea)
+You can run the main method in Main.java, and it will parse a copy of the sample input that I've put in src/test/java/resources/input.txt.
+
+There isn't any serialization implemented, so if you want to view the parsed objects, I would suggest debugging and putting a breakpoint on the console print line in the main method.
+
+Running the test in IntegrationTest.java will also verify that the example inputs work correctly. 
 
 [![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)]
