@@ -28,9 +28,10 @@ public class DefaultProductPricesTransformer implements ProductPricesTransformer
     /*
           This is the most complicated method in the entire project, and there is a pretty strong argument to somehow
           break it up into multiple methods/classes, but as it stands it would be necessary to repeat some of the checks
-          to break it up. If it remains exactly this complicated forever, that's not too bad. Once more requirements 
+          or calculatons to break it up. If it remains exactly this complicated forever, that's not too bad. Once more requirements 
           are added, further abstraction will be required.
      */
+    
     public ProductPrices transformPrices(final ProductInputData inputData) {
         String displayPrice;
         double calculatorPrice;
