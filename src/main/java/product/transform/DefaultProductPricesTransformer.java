@@ -1,7 +1,6 @@
 package product.transform;
 
 import product.model.ProductInputData;
-import product.model.ProductInputField;
 import product.model.ProductPrices;
 
 import java.math.BigDecimal;

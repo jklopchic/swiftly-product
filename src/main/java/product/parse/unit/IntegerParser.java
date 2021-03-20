@@ -3,12 +3,6 @@ package product.parse.unit;
 import product.model.ProductParseException;
 
 public class IntegerParser {
-    
-    /*
-    
-           I've chosen to only implement 
-    
-     */
 
     public static IntegerParser construct() {
         return new IntegerParser();

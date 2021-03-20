@@ -4,8 +4,6 @@ import com.google.common.collect.Maps;
 
 import java.util.Map;
 
-import static product.model.ProductInputField.*;
-
 public class ProductInputData {
     
     /*

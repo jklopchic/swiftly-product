@@ -33,22 +33,6 @@ public class ProductRecord {
     
     public ProductPrices getPrices() { return prices; }
 
-    public String getDisplayPrice() {
-        return prices.getDisplayPrice();
-    }
-
-    public Double getCalculatorPrice() {
-        return prices.getCalculatorPrice();
-    }
-
-    public String getSaleDisplayPrice() {
-        return prices.getSaleDisplayPrice();
-    }
-
-    public Double getSaleCalculatorPrice() {
-        return prices.getSaleCalculatorPrice();
-    }
-
     public UnitOfMeasure getUnitOfMeasure() {
         return unitOfMeasure;
     }
