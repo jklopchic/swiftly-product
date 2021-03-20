@@ -1,5 +1,7 @@
 package product.model;
 
+import com.google.common.base.Objects;
+
 public class ProductRecord {
 
     private final Integer productId;
@@ -93,4 +95,21 @@ public class ProductRecord {
         }
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ProductRecord)) return false;
+        ProductRecord that = (ProductRecord) o;
+        return Objects.equal(getProductId(), that.getProductId()) && 
+                Objects.equal(getDescription(), that.getDescription()) && 
+                Objects.equal(getPrices(), that.getPrices()) && 
+                getUnitOfMeasure() == that.getUnitOfMeasure() && 
+                Objects.equal(getProductSize(), that.getProductSize()) && 
+                Objects.equal(getTaxRate(), that.getTaxRate());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(getProductId(), getDescription(), getPrices(), getUnitOfMeasure(), getProductSize(), getTaxRate());
+    }
 }

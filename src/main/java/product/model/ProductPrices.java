@@ -1,5 +1,7 @@
 package product.model;
 
+import com.google.common.base.Objects;
+
 public class ProductPrices {
 
     private final String displayPrice;
@@ -29,5 +31,21 @@ public class ProductPrices {
 
     public Double getSaleCalculatorPrice() {
         return saleCalculatorPrice;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ProductPrices)) return false;
+        ProductPrices that = (ProductPrices) o;
+        return Objects.equal(getDisplayPrice(), that.getDisplayPrice()) && 
+                Objects.equal(getCalculatorPrice(), that.getCalculatorPrice()) && 
+                Objects.equal(getSaleDisplayPrice(), that.getSaleDisplayPrice()) && 
+                Objects.equal(getSaleCalculatorPrice(), that.getSaleCalculatorPrice());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(getDisplayPrice(), getCalculatorPrice(), getSaleDisplayPrice(), getSaleCalculatorPrice());
     }
 }
