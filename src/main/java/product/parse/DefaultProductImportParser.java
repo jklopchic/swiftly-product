@@ -1,6 +1,7 @@
 package product.parse;
 
 import product.model.ProductInputData;
+import product.parse.unit.FlagsParser;
 import product.parse.unit.IntegerParser;
 import product.parse.unit.StringParser;
 
@@ -8,17 +9,21 @@ public class DefaultProductImportParser implements ProductInputParser {
 
     private final StringParser stringParser;
     private final IntegerParser integerParser;
+    private final FlagsParser flagsParser;
 
     public static DefaultProductImportParser construct(final StringParser stringParser,
-                                                       final IntegerParser integerParser) {
-        return new DefaultProductImportParser(stringParser, integerParser);
+                                                       final IntegerParser integerParser,
+                                                       final FlagsParser flagsParser) {
+        return new DefaultProductImportParser(stringParser, integerParser, flagsParser);
     }
 
     private DefaultProductImportParser(final StringParser stringParser,
-                                       final IntegerParser integerParser) {
+                                       final IntegerParser integerParser,
+                                       final FlagsParser flagsParser) {
 
         this.stringParser = stringParser;
         this.integerParser = integerParser;
+        this.flagsParser = flagsParser;
     }
 
     @Override
@@ -60,6 +65,8 @@ public class DefaultProductImportParser implements ProductInputParser {
 
         final int saleSplitQuantity = integerParser.parse(input.substring(114, 122));
 
+        final boolean [] flags = flagsParser.parse(input.substring(123, 132), 8);
+
         final String productSize = stringParser.parse(input.substring(133, 142));
 
         return new ProductInputData(productId,
@@ -70,7 +77,7 @@ public class DefaultProductImportParser implements ProductInputParser {
                                     saleSplitPrice,
                                     regularSplitQuantity,
                                     saleSplitQuantity,
-                                    null,
+                                    flags,
                                     productSize);
     }
 }

@@ -70,7 +70,7 @@
       <recent name="product.parse" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FlagsParserTest">
+  <component name="RunManager" selected="JUnit.All in swiftly-product">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -153,8 +153,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FlagsParserTest" />
         <item itemvalue="JUnit.All in swiftly-product" />
+        <item itemvalue="JUnit.FlagsParserTest" />
         <item itemvalue="JUnit.DefaultProductInputParserTest" />
         <item itemvalue="JUnit.ProductCatalogIntegrationServiceTest" />
         <item itemvalue="JUnit.ProductCatalogIntegrationServiceTest.ingestShouldReturnValuesFromBulkParseCalls" />
@@ -169,7 +169,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616100972853</updated>
-      <workItem from="1616100974932" duration="19223000" />
+      <workItem from="1616100974932" duration="19666000" />
     </task>
     <servers />
   </component>

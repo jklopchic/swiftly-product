@@ -2,23 +2,23 @@ package product.parse;
 
 import org.junit.Test;
 import product.model.ProductInputData;
+import product.parse.unit.FlagsParser;
 import product.parse.unit.IntegerParser;
 import product.parse.unit.StringParser;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
 
 public class DefaultProductInputParserTest {
 
     private final StringParser mockStringParser = mock(StringParser.class);
     private final IntegerParser mockIntegerParser = mock(IntegerParser.class);
+    private final FlagsParser mockFlagsParser = mock(FlagsParser.class);
 
-    private final ProductInputParser parser = DefaultProductImportParser.construct(mockStringParser, mockIntegerParser);
+    private final ProductInputParser parser = DefaultProductImportParser.construct(mockStringParser, mockIntegerParser, mockFlagsParser);
 
     private final String exampleInput = "80000001 Kimchi-flavored white rice                                  00000567 00000001 00000002 00000003 00000004 00000005 NNNNNNNNN      18oz";
 
@@ -41,9 +41,9 @@ public class DefaultProductInputParserTest {
     public void parserShouldSetProductId() {
         final int expected = 80000001;
 
-        final String unparsedProductId = exampleInput.substring(0,8);
+        final String unparsed = exampleInput.substring(0,8);
 
-        given(mockIntegerParser.parse(unparsedProductId)).willReturn(expected);
+        given(mockIntegerParser.parse(unparsed)).willReturn(expected);
 
         final ProductInputData actualProductRecord = parser.parse(exampleInput);
 
@@ -56,9 +56,9 @@ public class DefaultProductInputParserTest {
     public void parserShouldSetRegularEachPrice() {
         final int expected = 567;
 
-        final String unparsedProductId = exampleInput.substring(69, 77);
+        final String unparsed = exampleInput.substring(69, 77);
 
-        given(mockIntegerParser.parse(unparsedProductId)).willReturn(expected);
+        given(mockIntegerParser.parse(unparsed)).willReturn(expected);
 
         final ProductInputData actualProductRecord = parser.parse(exampleInput);
 
@@ -71,9 +71,9 @@ public class DefaultProductInputParserTest {
     public void parserShouldSetSaleEachPrice() {
         final int expected = 1;
 
-        final String unparsedProductId = exampleInput.substring(78, 86);
+        final String unparsed = exampleInput.substring(78, 86);
 
-        given(mockIntegerParser.parse(unparsedProductId)).willReturn(expected);
+        given(mockIntegerParser.parse(unparsed)).willReturn(expected);
 
         final ProductInputData actualProductRecord = parser.parse(exampleInput);
 
@@ -86,9 +86,9 @@ public class DefaultProductInputParserTest {
     public void parserShouldSetRegularSplitPrice() {
         final int expected = 2;
 
-        final String unparsedProductId = exampleInput.substring(87, 95);
+        final String unparsed = exampleInput.substring(87, 95);
 
-        given(mockIntegerParser.parse(unparsedProductId)).willReturn(expected);
+        given(mockIntegerParser.parse(unparsed)).willReturn(expected);
 
         final ProductInputData actualProductRecord = parser.parse(exampleInput);
 
@@ -101,9 +101,9 @@ public class DefaultProductInputParserTest {
     public void parserShouldSetSaleSplitPrice() {
         final int expected = 3;
 
-        final String unparsedProductId = exampleInput.substring(96, 104);
+        final String unparsed = exampleInput.substring(96, 104);
 
-        given(mockIntegerParser.parse(unparsedProductId)).willReturn(expected);
+        given(mockIntegerParser.parse(unparsed)).willReturn(expected);
 
         final ProductInputData actualProductRecord = parser.parse(exampleInput);
 
@@ -116,9 +116,9 @@ public class DefaultProductInputParserTest {
     public void parserShouldSetRegularSplitQuantity() {
         final int expected = 4;
 
-        final String unparsedProductId = exampleInput.substring(105, 113);
+        final String unparsed = exampleInput.substring(105, 113);
 
-        given(mockIntegerParser.parse(unparsedProductId)).willReturn(expected);
+        given(mockIntegerParser.parse(unparsed)).willReturn(expected);
 
         final ProductInputData actualProductRecord = parser.parse(exampleInput);
 
@@ -131,13 +131,28 @@ public class DefaultProductInputParserTest {
     public void parserShouldSetSaleSplitQuantity() {
         final int expected = 5;
 
-        final String unparsedProductId = exampleInput.substring(114, 122);
+        final String unparsed = exampleInput.substring(114, 122);
 
-        given(mockIntegerParser.parse(unparsedProductId)).willReturn(expected);
+        given(mockIntegerParser.parse(unparsed)).willReturn(expected);
 
         final ProductInputData actualProductRecord = parser.parse(exampleInput);
 
         final int actual = actualProductRecord.getSaleSplitQuantity();
+
+        assertThat(actual, is(equalTo(expected)));
+    }
+
+    @Test
+    public void parserShouldSetFlags() {
+        final boolean[]  expected = {false, false, false, false, false, false, false, false};
+
+        final String unparsed = exampleInput.substring(123, 132);
+
+        given(mockFlagsParser.parse(unparsed, expected.length)).willReturn(expected);
+
+        final ProductInputData actualProductRecord = parser.parse(exampleInput);
+
+        final boolean[] actual = actualProductRecord.getFlags();
 
         assertThat(actual, is(equalTo(expected)));
     }
