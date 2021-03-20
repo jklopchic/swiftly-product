@@ -11,7 +11,7 @@ import static org.mockito.Mockito.mock;
 
 public class ProductPricesTransformerTest {
     
-    private final ProductPricesTransformer transformer = ProductPricesTransformer.construct();
+    private final DefaultProductPricesTransformer transformer = DefaultProductPricesTransformer.construct();
 
     private ProductInputData inputData = mock(ProductInputData.class);
 

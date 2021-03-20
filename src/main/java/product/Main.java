@@ -7,8 +7,8 @@ import product.parse.unit.FlagsParser;
 import product.parse.unit.IntegerParser;
 import product.parse.unit.StringParser;
 import product.publish.NoOpProductRecordPublisher;
+import product.transform.DefaultProductPricesTransformer;
 import product.transform.DefaultProductRecordTransformer;
-import product.transform.ProductPricesTransformer;
 import product.transform.ProductRecordTransformer;
 import product.publish.ProductRecordPublisher;
 
@@ -21,9 +21,9 @@ public class Main {
         final double taxRate = 7.775;
 
         final StringParser stringParser = StringParser.construct();
-        final IntegerParser integerParser = IntegerParser.construct();;
+        final IntegerParser integerParser = IntegerParser.construct();
         final FlagsParser flagsParser = FlagsParser.construct();
-        final ProductPricesTransformer productPricesTransformer = ProductPricesTransformer.construct();
+        final DefaultProductPricesTransformer productPricesTransformer = DefaultProductPricesTransformer.construct();
 
         final ProductInputParser inputParser = DefaultProductInputParser.construct(stringParser, integerParser, flagsParser);
         final ProductRecordTransformer recordParser = DefaultProductRecordTransformer.construct(taxRate, productPricesTransformer);

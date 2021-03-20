@@ -8,6 +8,15 @@ import static product.model.ProductInputField.*;
 
 public class ProductInputData {
     
+    /*
+    
+        I've chosen to only implement strings, integers and flags. There isn't any difference between currency and number 
+        in the current specification, on both the parse side, and the storage side. Just treat currency values as "USD in cents"
+        
+        If more granular currency requirements arise, adding a fourth map to store them isn't terribly difficult. 
+        
+     */
+    
     private final Map<ProductInputField, String> stringFieldValues = Maps.newHashMap();
     private final Map<ProductInputField, Integer> integerFieldValues = Maps.newHashMap();
     private final Map<ProductInputField, boolean[]> flagsFieldValues = Maps.newHashMap();

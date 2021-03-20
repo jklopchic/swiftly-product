@@ -9,15 +9,15 @@ import static product.model.ProductInputField.*;
 public class DefaultProductRecordTransformer implements ProductRecordTransformer {
 
     private final double taxRate;
-    private final ProductPricesTransformer pricesTransformer;
+    private final DefaultProductPricesTransformer pricesTransformer;
 
     public static DefaultProductRecordTransformer construct(final double taxRate,
-                                                            final ProductPricesTransformer pricesTransformer) {
+                                                            final DefaultProductPricesTransformer pricesTransformer) {
         return new DefaultProductRecordTransformer(taxRate, pricesTransformer);
     }
 
     private DefaultProductRecordTransformer(final double taxRate, 
-                                            final ProductPricesTransformer pricesTransformer) {
+                                            final DefaultProductPricesTransformer pricesTransformer) {
 
         this.taxRate = taxRate;
         this.pricesTransformer = pricesTransformer;

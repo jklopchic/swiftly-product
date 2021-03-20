@@ -1,6 +1,14 @@
 package product.model;
 
 public enum ProductInputField {
+    
+    /*
+    
+        I've chosen to implement this as an enum because it makes it a bit easier to refer to in other parts of the code,
+        but if there is less desire to encode all of the inputs in code, this class can easily be refactored into a bag
+        of data, and then we can pull the definition of the inputs from a database, or from a config file, etc.
+    
+     */
    
     ProductId ("Product ID", ProductInputFieldType.Integer, 1, 8),
     ProductDescription ("Product Description", ProductInputFieldType.String, 10, 68),
