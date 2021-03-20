@@ -48,47 +48,7 @@ public class ProductInputData {
         stringFieldValues.put(field, value);
     }
 
-    public void setFlagsValues(final ProductInputField field, final boolean[] value) {
+    public void setFlagsValue(final ProductInputField field, final boolean[] value) {
         flagsFieldValues.put(field, value);
-    }
-
-    public int getProductId() {
-        return getIntegerValue(ProductId);
-    }
-
-    public String getProductDescription() {
-        return getStringValue(ProductDescription);
-    }
-
-    public int getEachPrice() {
-        return getIntegerValue(RegularEachPrice);
-    }
-
-    public int getSaleEachPrice() {
-        return getIntegerValue(SaleEachPrice);
-    }
-
-    public int getRegularSplitPrice() {
-        return getIntegerValue(RegularSplitPrice);
-    }
-
-    public int getSaleSplitPrice() {
-        return getIntegerValue(SaleSplitPrice);
-    }
-
-    public int getRegularSplitQuantity() {
-        return getIntegerValue(RegularSplitQuantity);
-    }
-
-    public int getSaleSplitQuantity() {
-        return getIntegerValue(SaleSplitQuantity);
-    }
-
-    public boolean[] getFlags() {
-        return getFlagsValue(Flags);
-    }
-
-    public String getProductSize() {
-        return getStringValue(ProductSize);
     }
 }

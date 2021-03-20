@@ -1,11 +1,13 @@
 package product.transform;
 
 import product.model.ProductInputData;
-import product.model.ProductParseException;
+import product.model.ProductInputField;
 import product.model.ProductPrices;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+
+import static product.model.ProductInputField.*;
 
 public class DefaultProductPricesTransformer implements ProductPricesTransformer {
     
@@ -28,35 +30,45 @@ public class DefaultProductPricesTransformer implements ProductPricesTransformer
         double calculatorPrice;
         String saleDisplayPrice;
         double saleCalculatorPrice;
+        
+        final int eachPriceInCents = inputData.getIntegerValue(RegularEachPrice);
+        final int salePriceInCents = inputData.getIntegerValue(SaleEachPrice);
+        final int regularSplitPriceInCents = inputData.getIntegerValue(RegularSplitPrice);
+        final int saleSplitPriceInCents = inputData.getIntegerValue(SaleSplitPrice);
+        
+        final int regularSplitQuantity = inputData.getIntegerValue(RegularSplitQuantity);
+        final int saleSplitQuantity = inputData.getIntegerValue(SaleSplitQuantity);
 
-        if(inputData.getEachPrice() != 0) {
-            final double eachPrice = inputData.getEachPrice() / 100.00;
+        if(eachPriceInCents != 0) {
+            final double eachPrice = eachPriceInCents / 100.00;
 
             displayPrice = formatEaches(eachPrice);
             calculatorPrice = eachPrice;
-        } else if(inputData.getRegularSplitPrice() != 0) {
-            final double splitPrice = inputData.getRegularSplitPrice() / 100.00;
-            final double calculatedSplitPrice = round(splitPrice / inputData.getRegularSplitQuantity(), 4);
+        } else if(regularSplitPriceInCents != 0) {
+            final double splitPrice = regularSplitPriceInCents / 100.00;
+            final double calculatedSplitPrice = round(splitPrice / regularSplitQuantity, 4);
 
-            displayPrice = formatSplit(splitPrice, inputData.getRegularSplitQuantity());
+            displayPrice = formatSplit(splitPrice, regularSplitQuantity);
             calculatorPrice = calculatedSplitPrice;
         } else {
-            throw new ProductParseException();
+            displayPrice = "$0.00";
+            calculatorPrice = 0;
         }
 
-        if(inputData.getSaleEachPrice() != 0) {
-            final double eachPrice = inputData.getSaleEachPrice() / 100.00;
+        if(salePriceInCents != 0) {
+            final double eachPrice = salePriceInCents / 100.00;
 
             saleDisplayPrice = formatEaches(eachPrice);
             saleCalculatorPrice = eachPrice;
-        } else if(inputData.getSaleSplitPrice() != 0) {
-            final double splitPrice = inputData.getSaleSplitPrice() / 100.00;
-            final double calculatedSplitPrice = round(splitPrice / inputData.getSaleSplitQuantity(), 4);
+        } else if(saleSplitPriceInCents!= 0) {
+            final double splitPrice = saleSplitPriceInCents/ 100.00;
+            final double calculatedSplitPrice = round(splitPrice / saleSplitQuantity, 4);
 
-            saleDisplayPrice = formatSplit(splitPrice, inputData.getSaleSplitQuantity());
+            saleDisplayPrice = formatSplit(splitPrice, saleSplitQuantity);
             saleCalculatorPrice = calculatedSplitPrice;
         } else {
-            throw new ProductParseException();
+            saleDisplayPrice = "$0.00";
+            saleCalculatorPrice = 0;
         }
 
         return new ProductPrices(displayPrice, calculatorPrice, saleDisplayPrice, saleCalculatorPrice);

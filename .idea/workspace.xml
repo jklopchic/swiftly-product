@@ -46,7 +46,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -107,48 +107,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DefaultProductRecordTransformerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductPricesTransformerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swiftly-product" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="product.model.*" />
+          <option name="PATTERN" value="product.transform.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="product.transform" />
-      <option name="MAIN_CLASS_NAME" value="product.transform.DefaultProductRecordTransformerTest" />
+      <option name="MAIN_CLASS_NAME" value="product.transform.ProductPricesTransformerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DefaultProductRecordTransformerTest.shouldTransformRegularSplitCalculatorPriceWithLargeQuantity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductPricesTransformerTest.shouldTransformRegularSplitPriceWithLargeQuantity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swiftly-product" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="product.model.*" />
+          <option name="PATTERN" value="product.transform.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="product.transform" />
-      <option name="MAIN_CLASS_NAME" value="product.transform.DefaultProductRecordTransformerTest" />
-      <option name="METHOD_NAME" value="shouldTransformRegularSplitCalculatorPriceWithLargeQuantity" />
+      <option name="MAIN_CLASS_NAME" value="product.transform.ProductPricesTransformerTest" />
+      <option name="METHOD_NAME" value="shouldTransformRegularSplitPriceWithLargeQuantity" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IntegerParserTest.parserShouldParseNegative" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductPricesTransformerTest.shouldTransformSaleSplitCalculatorPrice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swiftly-product" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="product.parse.unit.*" />
+          <option name="PATTERN" value="product.transform.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="product.parse.unit" />
-      <option name="MAIN_CLASS_NAME" value="product.parse.unit.IntegerParserTest" />
-      <option name="METHOD_NAME" value="parserShouldParseNegative" />
+      <option name="PACKAGE_NAME" value="product.transform" />
+      <option name="MAIN_CLASS_NAME" value="product.transform.ProductPricesTransformerTest" />
+      <option name="METHOD_NAME" value="shouldTransformSaleSplitCalculatorPrice" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -157,10 +157,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in swiftly-product" />
-        <item itemvalue="JUnit.IntegerParserTest.parserShouldParseNegative" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.DefaultProductRecordTransformerTest" />
-        <item itemvalue="JUnit.DefaultProductRecordTransformerTest.shouldTransformRegularSplitCalculatorPriceWithLargeQuantity" />
+        <item itemvalue="JUnit.ProductPricesTransformerTest" />
+        <item itemvalue="JUnit.ProductPricesTransformerTest.shouldTransformRegularSplitPriceWithLargeQuantity" />
+        <item itemvalue="JUnit.ProductPricesTransformerTest.shouldTransformSaleSplitCalculatorPrice" />
       </list>
     </recent_temporary>
   </component>
@@ -172,7 +172,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616100972853</updated>
-      <workItem from="1616100974932" duration="34334000" />
+      <workItem from="1616100974932" duration="36721000" />
     </task>
     <servers />
   </component>
@@ -183,19 +183,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/product/parse/unit/IntegerParser.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/product/ProductCatalogIntegrationService.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/product/parse/DefaultProductInputParser.java</url>
           <line>51</line>
           <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/product/Main.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

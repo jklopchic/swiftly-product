@@ -27,7 +27,7 @@ public class DefaultProductRecordTransformerTest {
     public void before() {
         reset(inputData);
         final boolean [] flags = {false, false, false, false, false, false, false, false};
-        given(inputData.getFlags()).willReturn(flags);
+        given(inputData.getFlagsValue(Flags)).willReturn(flags);
     }
 
 
@@ -70,7 +70,7 @@ public class DefaultProductRecordTransformerTest {
 
         final boolean [] flags = {false, false, false, false, true, false, false, false};
 
-        given(inputData.getFlags()).willReturn(flags);
+        given(inputData.getFlagsValue(Flags)).willReturn(flags);
 
         final double actual = transformer.transform(inputData).getTaxRate();
 
@@ -83,7 +83,7 @@ public class DefaultProductRecordTransformerTest {
 
         final boolean [] flags = {true, true, true, true, false, true, true, true};
 
-        given(inputData.getFlags()).willReturn(flags);
+        given(inputData.getFlagsValue(Flags)).willReturn(flags);
 
         final double actual = transformer.transform(inputData).getTaxRate();
 
@@ -96,7 +96,7 @@ public class DefaultProductRecordTransformerTest {
 
         final boolean [] flags = {false, false, true, false, false, false, false, false};
 
-        given(inputData.getFlags()).willReturn(flags);
+        given(inputData.getFlagsValue(Flags)).willReturn(flags);
 
         final UnitOfMeasure actual = transformer.transform(inputData).getUnitOfMeasure();
 
@@ -109,7 +109,7 @@ public class DefaultProductRecordTransformerTest {
 
         final boolean [] flags = {true, true, false, true, true, true, true, true};
 
-        given(inputData.getFlags()).willReturn(flags);
+        given(inputData.getFlagsValue(Flags)).willReturn(flags);
 
         final UnitOfMeasure actual = transformer.transform(inputData).getUnitOfMeasure();
 

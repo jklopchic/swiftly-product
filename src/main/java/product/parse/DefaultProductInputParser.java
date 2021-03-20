@@ -45,7 +45,7 @@ public class DefaultProductInputParser implements ProductInputParser {
                     break;
 
                 case Flags:
-                    result.setFlagsValues(field, flagsParser.parse(unparsed, field.getEnd() - field.getZeroIndexedStart()));
+                    result.setFlagsValue(field, flagsParser.parse(unparsed, field.getEnd() - field.getZeroIndexedStart()));
                     break;
             }
         }

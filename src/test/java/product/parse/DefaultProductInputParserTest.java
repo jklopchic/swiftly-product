@@ -11,6 +11,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
+import static product.model.ProductInputField.*;
 
 public class DefaultProductInputParserTest {
 
@@ -32,7 +33,7 @@ public class DefaultProductInputParserTest {
 
         final ProductInputData actualProductRecord = parser.parse(exampleInput);
 
-        final String actual = actualProductRecord.getProductDescription();
+        final String actual = actualProductRecord.getStringValue(ProductDescription);
 
         assertThat(actual, is(equalTo(expected)));
     }
@@ -47,7 +48,7 @@ public class DefaultProductInputParserTest {
 
         final ProductInputData actualProductRecord = parser.parse(exampleInput);
 
-        final int actual = actualProductRecord.getProductId();
+        final int actual = actualProductRecord.getIntegerValue(ProductId);
 
         assertThat(actual, is(equalTo(expected)));
     }
@@ -62,7 +63,7 @@ public class DefaultProductInputParserTest {
 
         final ProductInputData actualProductRecord = parser.parse(exampleInput);
 
-        final int actual = actualProductRecord.getEachPrice();
+        final int actual = actualProductRecord.getIntegerValue(RegularEachPrice);
 
         assertThat(actual, is(equalTo(expected)));
     }
@@ -77,7 +78,7 @@ public class DefaultProductInputParserTest {
 
         final ProductInputData actualProductRecord = parser.parse(exampleInput);
 
-        final int actual = actualProductRecord.getSaleEachPrice();
+        final int actual = actualProductRecord.getIntegerValue(SaleEachPrice);
 
         assertThat(actual, is(equalTo(expected)));
     }
@@ -92,7 +93,7 @@ public class DefaultProductInputParserTest {
 
         final ProductInputData actualProductRecord = parser.parse(exampleInput);
 
-        final int actual = actualProductRecord.getRegularSplitPrice();
+        final int actual = actualProductRecord.getIntegerValue(RegularSplitPrice);
 
         assertThat(actual, is(equalTo(expected)));
     }
@@ -107,7 +108,7 @@ public class DefaultProductInputParserTest {
 
         final ProductInputData actualProductRecord = parser.parse(exampleInput);
 
-        final int actual = actualProductRecord.getSaleSplitPrice();
+        final int actual = actualProductRecord.getIntegerValue(SaleSplitPrice);
 
         assertThat(actual, is(equalTo(expected)));
     }
@@ -122,7 +123,7 @@ public class DefaultProductInputParserTest {
 
         final ProductInputData actualProductRecord = parser.parse(exampleInput);
 
-        final int actual = actualProductRecord.getRegularSplitQuantity();
+        final int actual = actualProductRecord.getIntegerValue(RegularSplitQuantity);
 
         assertThat(actual, is(equalTo(expected)));
     }
@@ -137,7 +138,7 @@ public class DefaultProductInputParserTest {
 
         final ProductInputData actualProductRecord = parser.parse(exampleInput);
 
-        final int actual = actualProductRecord.getSaleSplitQuantity();
+        final int actual = actualProductRecord.getIntegerValue(SaleSplitQuantity);
 
         assertThat(actual, is(equalTo(expected)));
     }
@@ -152,7 +153,7 @@ public class DefaultProductInputParserTest {
 
         final ProductInputData actualProductRecord = parser.parse(exampleInput);
 
-        final boolean[] actual = actualProductRecord.getFlags();
+        final boolean[] actual = actualProductRecord.getFlagsValue(Flags);
 
         assertThat(actual, is(equalTo(expected)));
     }
@@ -167,7 +168,7 @@ public class DefaultProductInputParserTest {
 
         final ProductInputData actualProductRecord = parser.parse(exampleInput);
 
-        final String actual = actualProductRecord.getProductSize();
+        final String actual = actualProductRecord.getStringValue(ProductSize);
 
         assertThat(actual, is(equalTo(expected)));
     }

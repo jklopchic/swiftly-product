@@ -33,11 +33,11 @@ public class DefaultProductRecordTransformer implements ProductRecordTransformer
 
         record.prices(pricesTransformer.transformPrices(input));
 
-        record.unitOfMeasure(getUnitOfMeasure(input.getFlags()));
+        record.unitOfMeasure(getUnitOfMeasure(input.getFlagsValue(Flags)));
 
         record.productSize(input.getStringValue(ProductSize));
 
-        record.taxRate(getTaxRate(input.getFlags()));
+        record.taxRate(getTaxRate(input.getFlagsValue(Flags)));
 
         return record.build();
     }
