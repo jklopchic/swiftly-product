@@ -1,13 +1,18 @@
 package product;
 
+import product.model.ProductRecord;
 import product.parse.DefaultProductImportParser;
 import product.parse.ProductInputParser;
 import product.parse.unit.FlagsParser;
 import product.parse.unit.IntegerParser;
 import product.parse.unit.StringParser;
+import product.publish.NoOpProductRecordPublisher;
 import product.transform.DefaultProductRecordTransformer;
 import product.transform.ProductRecordTransformer;
 import product.publish.ProductRecordPublisher;
+
+import java.io.File;
+import java.util.List;
 
 public class Main {
 
@@ -20,10 +25,15 @@ public class Main {
 
         final ProductInputParser inputParser = DefaultProductImportParser.construct(stringParser, integerParser, flagsParser);
         final ProductRecordTransformer recordParser = DefaultProductRecordTransformer.construct(taxRate);
-        final ProductRecordPublisher publisher = null;
+        final ProductRecordPublisher publisher = NoOpProductRecordPublisher.construct();
 
         final ProductCatalogIntegrationService service = ProductCatalogIntegrationService.construct(inputParser, recordParser, publisher);
 
-        service.ingestFile("This definitely won't work!");
+        final File file = new File("src/test/java/resources/input.txt");
+
+        final List<ProductRecord> records = service.ingestFile(file);
+
+        System.out.println("done!");
     }
+
 }

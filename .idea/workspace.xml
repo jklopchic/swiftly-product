@@ -15,8 +15,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -43,13 +43,14 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="product.publish" />
       <recent name="product.transform" />
       <recent name="product.model" />
     </key>
@@ -72,7 +73,20 @@
       <recent name="product.parse" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DefaultProductRecordTransformerTest">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="product.Main" />
+      <module name="swiftly-product" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -131,22 +145,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DefaultProductRecordTransformerTest.shouldTransformRegularSplitPrice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="swiftly-product" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="product.transform.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="product.transform" />
-      <option name="MAIN_CLASS_NAME" value="product.transform.DefaultProductRecordTransformerTest" />
-      <option name="METHOD_NAME" value="shouldTransformRegularSplitPrice" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DefaultProductRecordTransformerTest.shouldTransformRegularSplitPriceWithLargeQuantity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swiftly-product" />
       <extension name="coverage">
@@ -165,11 +163,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.DefaultProductRecordTransformerTest" />
         <item itemvalue="JUnit.DefaultProductRecordTransformerTest.shouldTransformRegularSplitCalculatorPriceWithLargeQuantity" />
         <item itemvalue="JUnit.DefaultProductRecordTransformerTest.shouldTransformRegularSplitPriceWithLargeQuantity" />
         <item itemvalue="JUnit.DefaultProductRecordTransformerTest.shouldTransformRegularSplitCalculatorPrice" />
-        <item itemvalue="JUnit.DefaultProductRecordTransformerTest.shouldTransformRegularSplitPrice" />
       </list>
     </recent_temporary>
   </component>
@@ -181,7 +179,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616100972853</updated>
-      <workItem from="1616100974932" duration="24389000" />
+      <workItem from="1616100974932" duration="27171000" />
     </task>
     <servers />
   </component>
@@ -202,9 +200,19 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/product/transform/DefaultProductRecordTransformer.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="14" />
+          <url>file://$PROJECT_DIR$/src/main/java/product/Main.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/product/ProductCatalogIntegrationService.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/product/parse/DefaultProductImportParser.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

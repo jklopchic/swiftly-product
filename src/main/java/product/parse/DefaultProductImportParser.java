@@ -65,7 +65,7 @@ public class DefaultProductImportParser implements ProductInputParser {
 
         final int saleSplitQuantity = integerParser.parse(input.substring(114, 122));
 
-        final boolean [] flags = flagsParser.parse(input.substring(123, 132), 8);
+        final boolean [] flags = flagsParser.parse(input.substring(123, 132), 9);
 
         final String productSize = stringParser.parse(input.substring(133, 142));
 
