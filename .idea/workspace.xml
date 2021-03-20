@@ -73,7 +73,7 @@
       <recent name="product.parse" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in swiftly-product">
+  <component name="RunManager" selected="JUnit.IntegerParserTest.parserShouldParseNegative">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="product.Main" />
       <module name="swiftly-product" />
@@ -137,17 +137,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DefaultProductRecordTransformerTest.shouldTransformRegularSplitPriceWithLargeQuantity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IntegerParserTest.parserShouldParseNegative" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swiftly-product" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="product.transform.*" />
+          <option name="PATTERN" value="product.parse.unit.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="product.transform" />
-      <option name="MAIN_CLASS_NAME" value="product.transform.DefaultProductRecordTransformerTest" />
-      <option name="METHOD_NAME" value="shouldTransformRegularSplitPriceWithLargeQuantity" />
+      <option name="PACKAGE_NAME" value="product.parse.unit" />
+      <option name="MAIN_CLASS_NAME" value="product.parse.unit.IntegerParserTest" />
+      <option name="METHOD_NAME" value="parserShouldParseNegative" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -155,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.IntegerParserTest.parserShouldParseNegative" />
         <item itemvalue="JUnit.All in swiftly-product" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.DefaultProductRecordTransformerTest" />
         <item itemvalue="JUnit.DefaultProductRecordTransformerTest.shouldTransformRegularSplitCalculatorPriceWithLargeQuantity" />
-        <item itemvalue="JUnit.DefaultProductRecordTransformerTest.shouldTransformRegularSplitPriceWithLargeQuantity" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +171,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616100972853</updated>
-      <workItem from="1616100974932" duration="28407000" />
+      <workItem from="1616100974932" duration="28742000" />
     </task>
     <servers />
   </component>
@@ -198,7 +198,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/product/parse/DefaultProductImportParser.java</url>
-          <line>67</line>
+          <line>51</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>

@@ -1,7 +1,7 @@
 package product;
 
 import product.model.ProductRecord;
-import product.parse.DefaultProductImportParser;
+import product.parse.DefaultProductInputParser;
 import product.parse.ProductInputParser;
 import product.parse.unit.FlagsParser;
 import product.parse.unit.IntegerParser;
@@ -23,7 +23,7 @@ public class Main {
         final IntegerParser integerParser = IntegerParser.construct();;
         final FlagsParser flagsParser = FlagsParser.construct();
 
-        final ProductInputParser inputParser = DefaultProductImportParser.construct(stringParser, integerParser, flagsParser);
+        final ProductInputParser inputParser = DefaultProductInputParser.construct(stringParser, integerParser, flagsParser);
         final ProductRecordTransformer recordParser = DefaultProductRecordTransformer.construct(taxRate);
         final ProductRecordPublisher publisher = NoOpProductRecordPublisher.construct();
 

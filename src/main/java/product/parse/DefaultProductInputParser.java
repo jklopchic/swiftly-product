@@ -5,21 +5,21 @@ import product.parse.unit.FlagsParser;
 import product.parse.unit.IntegerParser;
 import product.parse.unit.StringParser;
 
-public class DefaultProductImportParser implements ProductInputParser {
+public class DefaultProductInputParser implements ProductInputParser {
 
     private final StringParser stringParser;
     private final IntegerParser integerParser;
     private final FlagsParser flagsParser;
 
-    public static DefaultProductImportParser construct(final StringParser stringParser,
-                                                       final IntegerParser integerParser,
-                                                       final FlagsParser flagsParser) {
-        return new DefaultProductImportParser(stringParser, integerParser, flagsParser);
+    public static DefaultProductInputParser construct(final StringParser stringParser,
+                                                      final IntegerParser integerParser,
+                                                      final FlagsParser flagsParser) {
+        return new DefaultProductInputParser(stringParser, integerParser, flagsParser);
     }
 
-    private DefaultProductImportParser(final StringParser stringParser,
-                                       final IntegerParser integerParser,
-                                       final FlagsParser flagsParser) {
+    private DefaultProductInputParser(final StringParser stringParser,
+                                      final IntegerParser integerParser,
+                                      final FlagsParser flagsParser) {
 
         this.stringParser = stringParser;
         this.integerParser = integerParser;

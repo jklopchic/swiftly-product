@@ -38,6 +38,15 @@ public class IntegerParserTest {
         assertThat(actual, is(equalTo(expected)));
     }
 
+    @Test
+    public void parserShouldParseNegative() {
+        final int expected = -4000;
+
+        final int actual = parser.parse("-004000");
+
+        assertThat(actual, is(equalTo(expected)));
+    }
+
     @Test(expected = ProductParseException.class)
     public void parserShouldThrowForUnparsableToInteger() {
         parser.parse("Product Description");

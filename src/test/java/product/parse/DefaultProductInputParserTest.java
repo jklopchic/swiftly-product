@@ -18,7 +18,7 @@ public class DefaultProductInputParserTest {
     private final IntegerParser mockIntegerParser = mock(IntegerParser.class);
     private final FlagsParser mockFlagsParser = mock(FlagsParser.class);
 
-    private final ProductInputParser parser = DefaultProductImportParser.construct(mockStringParser, mockIntegerParser, mockFlagsParser);
+    private final ProductInputParser parser = DefaultProductInputParser.construct(mockStringParser, mockIntegerParser, mockFlagsParser);
 
     private final String exampleInput = "80000001 Kimchi-flavored white rice                                  00000567 00000001 00000002 00000003 00000004 00000005 NNNNNNNNN      18oz";
 
