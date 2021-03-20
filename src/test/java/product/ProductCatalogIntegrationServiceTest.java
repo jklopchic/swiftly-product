@@ -5,7 +5,7 @@ import org.junit.Test;
 import product.model.ProductInputData;
 import product.model.ProductRecord;
 import product.parse.ProductInputParser;
-import product.parse.ProductRecordParser;
+import product.parse.ProductRecordTransformer;
 import product.publish.ProductRecordPublisher;
 
 import java.util.List;
@@ -22,7 +22,7 @@ import static org.mockito.Mockito.verify;
 public class ProductCatalogIntegrationServiceTest {
 
     private final ProductInputParser mockInputParser = mock(ProductInputParser.class);
-    private final ProductRecordParser mockRecordParser = mock(ProductRecordParser.class);
+    private final ProductRecordTransformer mockRecordParser = mock(ProductRecordTransformer.class);
     private final ProductRecordPublisher mockPublisher = mock(ProductRecordPublisher.class);
 
     private ProductCatalogIntegrationService service = ProductCatalogIntegrationService.construct(mockInputParser, mockRecordParser, mockPublisher);
@@ -42,7 +42,7 @@ public class ProductCatalogIntegrationServiceTest {
 
         given(mockInputParser.bulkParse(expectedLines)).willReturn(expectedInputDatas);
 
-        given(mockRecordParser.bulkParse(expectedInputDatas)).willReturn(expected);
+        given(mockRecordParser.bulkTransform(expectedInputDatas)).willReturn(expected);
 
         final List<ProductRecord> actual = service.ingestFile(expectedLines.stream().collect(Collectors.joining("\n")));
 
@@ -64,7 +64,7 @@ public class ProductCatalogIntegrationServiceTest {
 
         given(mockInputParser.bulkParse(expectedLines)).willReturn(expectedInputDatas);
 
-        given(mockRecordParser.bulkParse(expectedInputDatas)).willReturn(expected);
+        given(mockRecordParser.bulkTransform(expectedInputDatas)).willReturn(expected);
 
         service.ingestFile(expectedLines.stream().collect(Collectors.joining("\n")));
 
