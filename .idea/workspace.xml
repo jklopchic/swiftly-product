@@ -14,9 +14,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -58,7 +58,11 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="product.parse" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="product.parse.unit" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="product.parse.unit" />
       <recent name="product.parse" />
       <recent name="product" />
     </key>
@@ -66,7 +70,7 @@
       <recent name="product.parse" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in swiftly-product">
+  <component name="RunManager" selected="JUnit.FlagsParserTest">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -90,7 +94,7 @@
       <module name="swiftly-product" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="product.parse.*" />
+          <option name="PATTERN" value="product.parse.unit.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -101,18 +105,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DefaultProductInputParserTest.parserShouldSetProductId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FlagsParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swiftly-product" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="product.parse.*" />
+          <option name="PATTERN" value="product.parse.unit.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="product.parse" />
-      <option name="MAIN_CLASS_NAME" value="product.parse.DefaultProductInputParserTest" />
-      <option name="METHOD_NAME" value="parserShouldSetProductId" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="product.parse.unit" />
+      <option name="MAIN_CLASS_NAME" value="product.parse.unit.FlagsParserTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -150,11 +153,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FlagsParserTest" />
         <item itemvalue="JUnit.All in swiftly-product" />
         <item itemvalue="JUnit.DefaultProductInputParserTest" />
         <item itemvalue="JUnit.ProductCatalogIntegrationServiceTest" />
         <item itemvalue="JUnit.ProductCatalogIntegrationServiceTest.ingestShouldReturnValuesFromBulkParseCalls" />
-        <item itemvalue="JUnit.DefaultProductInputParserTest.parserShouldSetProductId" />
       </list>
     </recent_temporary>
   </component>
@@ -166,7 +169,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616100972853</updated>
-      <workItem from="1616100974932" duration="18349000" />
+      <workItem from="1616100974932" duration="19223000" />
     </task>
     <servers />
   </component>
@@ -177,7 +180,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/product/parse/IntegerParser.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/product/parse/unit/IntegerParser.java</url>
           <line>13</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
