@@ -19,13 +19,13 @@ import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-public class ProductCatalogIntegrationServiceTest {
+public class ProductRecordIngesterTest {
 
     private final ProductInputParser mockInputParser = mock(ProductInputParser.class);
     private final ProductRecordTransformer mockRecordParser = mock(ProductRecordTransformer.class);
     private final ProductRecordPublisher mockPublisher = mock(ProductRecordPublisher.class);
 
-    private ProductCatalogIntegrationService service = ProductCatalogIntegrationService.construct(mockInputParser, mockRecordParser, mockPublisher);
+    private ProductRecordIngester service = ProductRecordIngester.construct(mockInputParser, mockRecordParser, mockPublisher);
 
     @Test
     public void ingestShouldCallBulkParse() {

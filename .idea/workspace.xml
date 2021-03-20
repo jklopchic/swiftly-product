@@ -14,9 +14,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
         <option value="Interface" />
+        <option value="package-info" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -74,7 +75,7 @@
       <recent name="product.parse" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in swiftly-product">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="product.Main" />
       <module name="swiftly-product" />
@@ -156,8 +157,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in swiftly-product" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in swiftly-product" />
         <item itemvalue="JUnit.ProductPricesTransformerTest" />
         <item itemvalue="JUnit.ProductPricesTransformerTest.shouldTransformRegularSplitPriceWithLargeQuantity" />
         <item itemvalue="JUnit.ProductPricesTransformerTest.shouldTransformSaleSplitCalculatorPrice" />
@@ -172,7 +173,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616100972853</updated>
-      <workItem from="1616100974932" duration="36721000" />
+      <workItem from="1616100974932" duration="37079000" />
     </task>
     <servers />
   </component>

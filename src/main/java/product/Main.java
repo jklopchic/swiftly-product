@@ -1,41 +1,20 @@
 package product;
 
+import product.factory.ProductRecordIngestorFactory;
 import product.model.ProductRecord;
-import product.parse.DefaultProductInputParser;
-import product.parse.ProductInputParser;
-import product.parse.unit.FlagsParser;
-import product.parse.unit.IntegerParser;
-import product.parse.unit.StringParser;
-import product.publish.NoOpProductRecordPublisher;
-import product.transform.DefaultProductPricesTransformer;
-import product.transform.DefaultProductRecordTransformer;
-import product.transform.ProductRecordTransformer;
-import product.publish.ProductRecordPublisher;
-
 import java.io.File;
 import java.util.List;
 
 public class Main {
 
     public static void main(String [] args) {
-        final double taxRate = 7.775;
-
-        final StringParser stringParser = StringParser.construct();
-        final IntegerParser integerParser = IntegerParser.construct();
-        final FlagsParser flagsParser = FlagsParser.construct();
-        final DefaultProductPricesTransformer productPricesTransformer = DefaultProductPricesTransformer.construct();
-
-        final ProductInputParser inputParser = DefaultProductInputParser.construct(stringParser, integerParser, flagsParser);
-        final ProductRecordTransformer recordParser = DefaultProductRecordTransformer.construct(taxRate, productPricesTransformer);
-        final ProductRecordPublisher publisher = NoOpProductRecordPublisher.construct();
-
-        final ProductCatalogIntegrationService service = ProductCatalogIntegrationService.construct(inputParser, recordParser, publisher);
+        final ProductRecordIngester ingester = ProductRecordIngestorFactory.construct().create();
 
         final File file = new File("src/test/java/resources/input.txt");
 
-        final List<ProductRecord> records = service.ingestFile(file);
+        final List<ProductRecord> records = ingester.ingestFile(file);
 
-        System.out.println("done!");
+        System.out.println(String.format("Ingested %d records", records.size()));
     }
 
 }

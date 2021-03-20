@@ -5,7 +5,6 @@ import product.model.ProductInputData;
 import product.model.ProductRecord;
 import product.parse.ProductInputParser;
 import product.transform.ProductRecordTransformer;
-import product.publish.ProductRecordPublisher;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -14,24 +13,22 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class ProductCatalogIntegrationService {
+public class ProductRecordIngester {
+    
+    public static final double DEFAULT_TAX_RATE = 7.775;
 
     private final ProductInputParser inputParser;
     private final ProductRecordTransformer recordParser;
-    private final ProductRecordPublisher publisher;
 
-    public static ProductCatalogIntegrationService construct(final ProductInputParser parser,
-                                                             final ProductRecordTransformer recordParser,
-                                                             final ProductRecordPublisher publisher) {
-        return new ProductCatalogIntegrationService(parser, recordParser, publisher);
+    public static ProductRecordIngester construct(final ProductInputParser parser,
+                                                  final ProductRecordTransformer recordParser) {
+        return new ProductRecordIngester(parser, recordParser);
     }
 
-    private ProductCatalogIntegrationService(final ProductInputParser inputParser,
-                                             final ProductRecordTransformer recordParser,
-                                             final ProductRecordPublisher publisher) {
+    private ProductRecordIngester(final ProductInputParser inputParser,
+                                  final ProductRecordTransformer recordParser) {
         this.inputParser = inputParser;
         this.recordParser = recordParser;
-        this.publisher = publisher;
     }
 
     public List<ProductRecord> ingestFile(final String asciiFile) {
