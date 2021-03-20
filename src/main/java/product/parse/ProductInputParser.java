@@ -1,6 +1,7 @@
 package product.parse;
 
 import product.model.ProductInputData;
+import product.model.ProductParseException;
 
 import java.util.ArrayList;
 import java.util.List;

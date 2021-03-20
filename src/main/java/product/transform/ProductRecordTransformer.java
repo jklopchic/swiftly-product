@@ -1,7 +1,8 @@
-package product.parse;
+package product.transform;
 
 import product.model.ProductInputData;
 import product.model.ProductRecord;
+import product.model.ProductParseException;
 
 import java.util.ArrayList;
 import java.util.List;

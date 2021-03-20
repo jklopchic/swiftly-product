@@ -1,7 +1,7 @@
 package product;
 
 import product.parse.ProductInputParser;
-import product.parse.ProductRecordTransformer;
+import product.transform.ProductRecordTransformer;
 import product.publish.ProductRecordPublisher;
 
 public class Main {

@@ -1,8 +1,7 @@
 package product.parse.unit;
 
 import org.junit.Test;
-import product.parse.ProductParseException;
-import product.parse.unit.IntegerParser;
+import product.model.ProductParseException;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;

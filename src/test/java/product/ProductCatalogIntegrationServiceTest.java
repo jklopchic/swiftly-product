@@ -5,7 +5,7 @@ import org.junit.Test;
 import product.model.ProductInputData;
 import product.model.ProductRecord;
 import product.parse.ProductInputParser;
-import product.parse.ProductRecordTransformer;
+import product.transform.ProductRecordTransformer;
 import product.publish.ProductRecordPublisher;
 
 import java.util.List;
