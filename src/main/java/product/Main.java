@@ -8,6 +8,7 @@ import product.parse.unit.IntegerParser;
 import product.parse.unit.StringParser;
 import product.publish.NoOpProductRecordPublisher;
 import product.transform.DefaultProductRecordTransformer;
+import product.transform.ProductPricesTransformer;
 import product.transform.ProductRecordTransformer;
 import product.publish.ProductRecordPublisher;
 
@@ -22,9 +23,10 @@ public class Main {
         final StringParser stringParser = StringParser.construct();
         final IntegerParser integerParser = IntegerParser.construct();;
         final FlagsParser flagsParser = FlagsParser.construct();
+        final ProductPricesTransformer productPricesTransformer = ProductPricesTransformer.construct();
 
         final ProductInputParser inputParser = DefaultProductInputParser.construct(stringParser, integerParser, flagsParser);
-        final ProductRecordTransformer recordParser = DefaultProductRecordTransformer.construct(taxRate);
+        final ProductRecordTransformer recordParser = DefaultProductRecordTransformer.construct(taxRate, productPricesTransformer);
         final ProductRecordPublisher publisher = NoOpProductRecordPublisher.construct();
 
         final ProductCatalogIntegrationService service = ProductCatalogIntegrationService.construct(inputParser, recordParser, publisher);

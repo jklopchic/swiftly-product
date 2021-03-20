@@ -16,8 +16,9 @@ import static product.model.ProductInputField.*;
 public class DefaultProductRecordTransformerTest {
 
     private final double taxRate = 7.755;
+    private final ProductPricesTransformer productPricesTransformer = ProductPricesTransformer.construct();
 
-    private ProductRecordTransformer transformer = DefaultProductRecordTransformer.construct(taxRate);
+    private ProductRecordTransformer transformer = DefaultProductRecordTransformer.construct(taxRate, productPricesTransformer);
 
     private ProductInputData inputData = mock(ProductInputData.class);
 

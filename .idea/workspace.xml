@@ -171,7 +171,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616100972853</updated>
-      <workItem from="1616100974932" duration="33161000" />
+      <workItem from="1616100974932" duration="33475000" />
     </task>
     <servers />
   </component>
@@ -188,7 +188,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/product/transform/DefaultProductRecordTransformerTest.java</url>
-          <line>124</line>
+          <line>125</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
