@@ -6,6 +6,16 @@ import product.model.UnitOfMeasure;
 
 public class DefaultProductRecordTransformer implements ProductRecordTransformer {
 
+    private final double taxRate;
+
+    public static DefaultProductRecordTransformer construct(final double taxRate) {
+        return new DefaultProductRecordTransformer(taxRate);
+    }
+
+    private DefaultProductRecordTransformer(final double taxRate) {
+
+        this.taxRate = taxRate;
+    }
 
     @Override
     public ProductRecord transform(final ProductInputData input) {
@@ -30,15 +40,28 @@ public class DefaultProductRecordTransformer implements ProductRecordTransformer
         builder.calculatorPrice(null);
         builder.saleCalculatorPrice(null);
 
-        //if flag 3 is set, Pound, otherwise, Each.
-        builder.unitOfMeasure(UnitOfMeasure.Each);
+        builder.unitOfMeasure(getUnitOfMeasure(input.getFlags()));
 
-        //1:1
         builder.productSize(input.getProductSize());
 
-        //always 7.775, if flag 5 is set, otherwize zero (not taxable)
-        builder.taxRate(0.0);
+        builder.taxRate(getTaxRate(input.getFlags()));
 
-        return null;
+        return builder.build();
     }
+
+    private double getTaxRate(boolean[] flags) {
+        if(flags[4]) {
+            return taxRate;
+        }
+        return 0.0;
+    }
+
+    private UnitOfMeasure getUnitOfMeasure(boolean[] flags) {
+        if(flags[2]) {
+            return UnitOfMeasure.Pound;
+        }
+        return UnitOfMeasure.Each;
+    }
+
+
 }

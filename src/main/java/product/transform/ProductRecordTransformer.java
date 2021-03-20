@@ -20,6 +20,9 @@ public interface ProductRecordTransformer {
             } catch (final ProductParseException e) {
                 //todo: add logging or something to deal with bad lines
                 continue;
+            } catch (final Exception e) {
+                //something really bad happened. Should deal with this eventually.
+                continue;
             }
         }
 

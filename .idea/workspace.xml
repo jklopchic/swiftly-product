@@ -15,8 +15,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -63,6 +63,7 @@
       <recent name="product.parse.unit" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="product.transform" />
       <recent name="product.parse.unit" />
       <recent name="product.parse" />
       <recent name="product" />
@@ -71,7 +72,7 @@
       <recent name="product.parse" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in swiftly-product">
+  <component name="RunManager" selected="JUnit.DefaultProductRecordTransformerTest">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -91,17 +92,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DefaultProductInputParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DefaultProductRecordTransformerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swiftly-product" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="product.parse.unit.*" />
+          <option name="PATTERN" value="product.transform.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="product.parse" />
-      <option name="MAIN_CLASS_NAME" value="product.parse.DefaultProductInputParserTest" />
+      <option name="PACKAGE_NAME" value="product.transform" />
+      <option name="MAIN_CLASS_NAME" value="product.transform.DefaultProductRecordTransformerTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DefaultProductRecordTransformerTest.appliesTaxRateWhenFlagIsTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="swiftly-product" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="product.transform.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="product.transform" />
+      <option name="MAIN_CLASS_NAME" value="product.transform.DefaultProductRecordTransformerTest" />
+      <option name="METHOD_NAME" value="appliesTaxRateWhenFlagIsTrue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DefaultProductRecordTransformerTest.transformsProductId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="swiftly-product" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="product.transform.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="product.transform" />
+      <option name="MAIN_CLASS_NAME" value="product.transform.DefaultProductRecordTransformerTest" />
+      <option name="METHOD_NAME" value="transformsProductId" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -121,44 +154,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductCatalogIntegrationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="swiftly-product" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="product" />
-      <option name="MAIN_CLASS_NAME" value="product.ProductCatalogIntegrationServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductCatalogIntegrationServiceTest.ingestShouldReturnValuesFromBulkParseCalls" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="swiftly-product" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="product" />
-      <option name="MAIN_CLASS_NAME" value="product.ProductCatalogIntegrationServiceTest" />
-      <option name="METHOD_NAME" value="ingestShouldReturnValuesFromBulkParseCalls" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DefaultProductRecordTransformerTest" />
+        <item itemvalue="JUnit.DefaultProductRecordTransformerTest.appliesTaxRateWhenFlagIsTrue" />
+        <item itemvalue="JUnit.DefaultProductRecordTransformerTest.transformsProductId" />
         <item itemvalue="JUnit.All in swiftly-product" />
         <item itemvalue="JUnit.FlagsParserTest" />
-        <item itemvalue="JUnit.DefaultProductInputParserTest" />
-        <item itemvalue="JUnit.ProductCatalogIntegrationServiceTest" />
-        <item itemvalue="JUnit.ProductCatalogIntegrationServiceTest.ingestShouldReturnValuesFromBulkParseCalls" />
       </list>
     </recent_temporary>
   </component>
@@ -170,7 +172,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616100972853</updated>
-      <workItem from="1616100974932" duration="20337000" />
+      <workItem from="1616100974932" duration="21583000" />
     </task>
     <servers />
   </component>
@@ -186,9 +188,14 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/product/model/ProductRecord.java</url>
-          <line>99</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/src/main/java/product/transform/DefaultProductRecordTransformer.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/product/transform/DefaultProductRecordTransformer.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
