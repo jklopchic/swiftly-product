@@ -144,7 +144,7 @@ public class DefaultProductInputParserTest {
 
     @Test
     public void parserShouldSetFlags() {
-        final boolean[]  expected = {false, false, false, false, false, false, false, false};
+        final boolean[]  expected = {false, false, false, false, false, false, false, false, false};
 
         final String unparsed = exampleInput.substring(123, 132);
 
