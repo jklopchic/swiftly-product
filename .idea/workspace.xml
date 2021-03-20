@@ -75,7 +75,7 @@
       <recent name="product.parse" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.ProductRecordIngesterTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="product.Main" />
       <module name="swiftly-product" />
@@ -139,29 +139,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductPricesTransformerTest.shouldTransformSaleSplitCalculatorPrice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductRecordIngesterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swiftly-product" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="product.transform.*" />
+          <option name="PATTERN" value="product.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="product.transform" />
-      <option name="MAIN_CLASS_NAME" value="product.transform.ProductPricesTransformerTest" />
-      <option name="METHOD_NAME" value="shouldTransformSaleSplitCalculatorPrice" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="product" />
+      <option name="MAIN_CLASS_NAME" value="product.ProductRecordIngesterTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ProductRecordIngesterTest" />
         <item itemvalue="JUnit.All in swiftly-product" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ProductPricesTransformerTest" />
         <item itemvalue="JUnit.ProductPricesTransformerTest.shouldTransformRegularSplitPriceWithLargeQuantity" />
-        <item itemvalue="JUnit.ProductPricesTransformerTest.shouldTransformSaleSplitCalculatorPrice" />
       </list>
     </recent_temporary>
   </component>
@@ -173,7 +172,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616100972853</updated>
-      <workItem from="1616100974932" duration="37079000" />
+      <workItem from="1616100974932" duration="37413000" />
     </task>
     <servers />
   </component>
@@ -190,7 +189,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/product/Main.java</url>
-          <line>37</line>
+          <line>16</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>

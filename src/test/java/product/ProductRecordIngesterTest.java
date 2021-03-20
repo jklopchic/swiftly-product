@@ -6,7 +6,6 @@ import product.model.ProductInputData;
 import product.model.ProductRecord;
 import product.parse.ProductInputParser;
 import product.transform.ProductRecordTransformer;
-import product.publish.ProductRecordPublisher;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,15 +22,21 @@ public class ProductRecordIngesterTest {
 
     private final ProductInputParser mockInputParser = mock(ProductInputParser.class);
     private final ProductRecordTransformer mockRecordParser = mock(ProductRecordTransformer.class);
-    private final ProductRecordPublisher mockPublisher = mock(ProductRecordPublisher.class);
 
-    private ProductRecordIngester service = ProductRecordIngester.construct(mockInputParser, mockRecordParser, mockPublisher);
+    private ProductRecordIngester service = ProductRecordIngester.construct(mockInputParser, mockRecordParser);
 
     @Test
     public void ingestShouldCallBulkParse() {
         service.ingestFile("");
 
         verify(mockInputParser).bulkParse(any());
+    }
+
+    @Test
+    public void ingestShouldCallBulkTransform() {
+        service.ingestFile("");
+
+        verify(mockRecordParser).bulkTransform(any());
     }
 
     @Test
@@ -48,29 +53,4 @@ public class ProductRecordIngesterTest {
 
         assertThat(actual, is(equalTo(expected)));
     }
-
-    @Test
-    public void ingestShouldCallPublish() {
-        service.ingestFile("");
-
-        verify(mockPublisher).publishProducts(any());
-    }
-
-    @Test
-    public void ingestShouldCallPublishWithResultFromParse() {
-        final List<String> expectedLines = Lists.newArrayList("line one", "line two", "line three");
-        final List<ProductInputData> expectedInputDatas = Lists.newArrayList();
-        final List<ProductRecord> expected = Lists.newArrayList();
-
-        given(mockInputParser.bulkParse(expectedLines)).willReturn(expectedInputDatas);
-
-        given(mockRecordParser.bulkTransform(expectedInputDatas)).willReturn(expected);
-
-        service.ingestFile(expectedLines.stream().collect(Collectors.joining("\n")));
-
-        verify(mockPublisher).publishProducts(expected);
-    }
-
-
-
 }
