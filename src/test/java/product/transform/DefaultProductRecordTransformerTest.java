@@ -1,6 +1,6 @@
 package product.transform;
 
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 import product.model.ProductInputData;
 import product.model.UnitOfMeasure;
@@ -10,6 +10,7 @@ import static org.mockito.Mockito.mock;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.reset;
 
 public class DefaultProductRecordTransformerTest {
 
@@ -17,10 +18,11 @@ public class DefaultProductRecordTransformerTest {
 
     private ProductRecordTransformer transformer = DefaultProductRecordTransformer.construct(taxRate);
 
-    private static ProductInputData inputData = mock(ProductInputData.class);
+    private ProductInputData inputData = mock(ProductInputData.class);
 
-    @BeforeClass
-    public static void before() {
+    @Before
+    public void before() {
+        reset(inputData);
         final boolean [] flags = {false, false, false, false, false, false, false, false};
         given(inputData.getFlags()).willReturn(flags);
     }
@@ -110,5 +112,123 @@ public class DefaultProductRecordTransformerTest {
 
         assertThat(actual, is(equalTo(expected)));
     }
+
+    @Test
+    public void shouldTransformRegularEachPrice() {
+        final String expected = "$1.23";
+
+        given(inputData.getEachPrice()).willReturn(123);
+
+        final String actual = transformer.transform(inputData).getDisplayPrice();
+
+        assertThat(actual, is(equalTo(expected)));
+    }
+
+    @Test
+    public void shouldTransformRegularCalculatorPrice() {
+        final double expected = 1.23;
+
+        given(inputData.getEachPrice()).willReturn(123);
+
+        final double actual = transformer.transform(inputData).getCalculatorPrice();
+
+        assertThat(actual, is(equalTo(expected)));
+    }
+
+    @Test
+    public void shouldTransformSaleEachPrice() {
+        final String expected = "$1.23";
+
+        given(inputData.getSaleEachPrice()).willReturn(123);
+
+        final String actual = transformer.transform(inputData).getSaleDisplayPrice();
+
+        assertThat(actual, is(equalTo(expected)));
+    }
+
+    @Test
+    public void shouldTransformSaleCalculatorPrice() {
+        final double expected = 1.23;
+
+        given(inputData.getSaleEachPrice()).willReturn(123);
+
+        final double actual = transformer.transform(inputData).getSaleCalculatorPrice();
+
+        assertThat(actual, is(equalTo(expected)));
+    }
+
+    @Test
+    public void shouldTransformRegularSplitPrice() {
+        final String expected = "2 for $2.46";
+
+        given(inputData.getRegularSplitPrice()).willReturn(246);
+        given(inputData.getRegularSplitQuantity()).willReturn(2);
+
+        final String actual = transformer.transform(inputData).getDisplayPrice();
+
+        assertThat(actual, is(equalTo(expected)));
+    }
+
+    @Test
+    public void shouldTransformRegularSplitPriceWithLargeQuantity() {
+        final String expected = "458 for $999999.99";
+
+        given(inputData.getRegularSplitPrice()).willReturn(99999999);
+        given(inputData.getRegularSplitQuantity()).willReturn(458);
+
+        final String actual = transformer.transform(inputData).getDisplayPrice();
+
+        assertThat(actual, is(equalTo(expected)));
+    }
+
+    @Test
+    public void shouldTransformRegularSplitCalculatorPrice() {
+        final double expected = 1.23;
+
+        given(inputData.getRegularSplitPrice()).willReturn(246);
+        given(inputData.getRegularSplitQuantity()).willReturn(2);
+
+        final double actual = transformer.transform(inputData).getCalculatorPrice();
+
+        assertThat(actual, is(equalTo(expected)));
+    }
+
+    @Test
+    public void shouldTransformRegularSplitCalculatorPriceWithLargeQuantity() {
+        final double expected = 2183.4061;
+
+        given(inputData.getRegularSplitPrice()).willReturn(99999999);
+        given(inputData.getRegularSplitQuantity()).willReturn(458);
+
+        final double actual = transformer.transform(inputData).getCalculatorPrice();
+
+        assertThat(actual, is(equalTo(expected)));
+    }
+
+    @Test
+    public void shouldTransformSaleSplitPrice() {
+        final String expected = "2 for $2.46";
+
+        given(inputData.getSaleSplitPrice()).willReturn(246);
+        given(inputData.getSaleSplitQuantity()).willReturn(2);
+
+        final String actual = transformer.transform(inputData).getSaleDisplayPrice();
+
+        assertThat(actual, is(equalTo(expected)));
+    }
+
+    @Test
+    public void shouldTransformSaleSplitCalculatorPrice() {
+        final double expected = 1.23;
+
+        given(inputData.getSaleSplitPrice()).willReturn(246);
+        given(inputData.getSaleSplitQuantity()).willReturn(2);
+
+        final double actual = transformer.transform(inputData).getSaleCalculatorPrice();
+
+        assertThat(actual, is(equalTo(expected)));
+    }
+
+
 
 }

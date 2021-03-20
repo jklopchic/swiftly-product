@@ -4,6 +4,9 @@ import product.model.ProductInputData;
 import product.model.ProductRecord;
 import product.model.UnitOfMeasure;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class DefaultProductRecordTransformer implements ProductRecordTransformer {
 
     private final double taxRate;
@@ -21,24 +24,13 @@ public class DefaultProductRecordTransformer implements ProductRecordTransformer
     public ProductRecord transform(final ProductInputData input) {
         final ProductRecord.Builder builder = new ProductRecord.Builder();
 
-        //1:1
         builder.productId(input.getProductId());
 
-        //1:1
         builder.description(input.getProductDescription());
 
+        setRegularPrice(builder, input);
 
-        /*
-                Prices can either be an each price (e.g. $1.00 each) or a split price (e.g. 2 for $0.99).
-                Only one price (each or split) per price level (regular or sale) will exist.
-                The price data for an undefined price will be all 0's. #this has been parsed to be zero.
-                If a price is split pricing, the Calculator Price is Split Price / Split Quantity
-         */
-        builder.displayPrice(null);
-        builder.saleDisplayPrice(null);
-
-        builder.calculatorPrice(null);
-        builder.saleCalculatorPrice(null);
+        setSalePrice(builder, input);
 
         builder.unitOfMeasure(getUnitOfMeasure(input.getFlags()));
 
@@ -47,6 +39,44 @@ public class DefaultProductRecordTransformer implements ProductRecordTransformer
         builder.taxRate(getTaxRate(input.getFlags()));
 
         return builder.build();
+    }
+
+    private void setRegularPrice(final ProductRecord.Builder builder, final ProductInputData inputData) {
+        if(inputData.getEachPrice() != 0) {
+            final double eachPrice = inputData.getEachPrice() / 100.00;
+
+            builder.displayPrice(formatEaches(eachPrice));
+            builder.calculatorPrice(eachPrice);
+        } else if(inputData.getRegularSplitPrice() != 0) {
+            final double splitPrice = inputData.getRegularSplitPrice() / 100.00;
+            final double calculatedSplitPrice = round(splitPrice / inputData.getRegularSplitQuantity(), 4);
+
+            builder.displayPrice(formatSplit(splitPrice, inputData.getRegularSplitQuantity()));
+            builder.calculatorPrice(calculatedSplitPrice);
+        }
+    }
+
+    private void setSalePrice(final ProductRecord.Builder builder, final ProductInputData inputData) {
+        if(inputData.getSaleEachPrice() != 0) {
+            final double eachPrice = inputData.getSaleEachPrice() / 100.00;
+
+            builder.saleDisplayPrice(formatEaches(eachPrice));
+            builder.saleCalculatorPrice(eachPrice);
+        } else if(inputData.getSaleSplitPrice() != 0) {
+            final double splitPrice = inputData.getSaleSplitPrice() / 100.00;
+            final double calculatedSplitPrice = round(splitPrice / inputData.getSaleSplitQuantity(), 4);
+
+            builder.saleDisplayPrice(formatSplit(splitPrice, inputData.getSaleSplitQuantity()));
+            builder.saleCalculatorPrice(calculatedSplitPrice);
+        }
+    }
+
+    private String formatEaches(final double eachPrice) {
+        return String.format("$%.2f", eachPrice);
+    }
+
+    private String formatSplit(final double splitPrice, final int splitQuantity) {
+        return String.format("%d for $%.2f", splitQuantity, splitPrice);
     }
 
     private double getTaxRate(boolean[] flags) {
@@ -61,6 +91,13 @@ public class DefaultProductRecordTransformer implements ProductRecordTransformer
             return UnitOfMeasure.Pound;
         }
         return UnitOfMeasure.Each;
+    }
+
+    private double round(double input, int decimalPlaces) {
+        //We can find a more elegant way of doing this if we like.
+
+        return new BigDecimal(input).setScale(decimalPlaces, RoundingMode.HALF_UP)
+                                    .doubleValue();
     }
 
 

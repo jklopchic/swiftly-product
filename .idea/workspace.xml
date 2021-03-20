@@ -84,14 +84,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in swiftly-product" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="swiftly-product" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DefaultProductRecordTransformerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swiftly-product" />
       <extension name="coverage">
@@ -107,7 +99,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DefaultProductRecordTransformerTest.appliesTaxRateWhenFlagIsTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DefaultProductRecordTransformerTest.shouldTransformRegularSplitCalculatorPrice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swiftly-product" />
       <extension name="coverage">
         <pattern>
@@ -117,13 +109,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="product.transform" />
       <option name="MAIN_CLASS_NAME" value="product.transform.DefaultProductRecordTransformerTest" />
-      <option name="METHOD_NAME" value="appliesTaxRateWhenFlagIsTrue" />
+      <option name="METHOD_NAME" value="shouldTransformRegularSplitCalculatorPrice" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DefaultProductRecordTransformerTest.transformsProductId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DefaultProductRecordTransformerTest.shouldTransformRegularSplitCalculatorPriceWithLargeQuantity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swiftly-product" />
       <extension name="coverage">
         <pattern>
@@ -133,23 +125,40 @@
       </extension>
       <option name="PACKAGE_NAME" value="product.transform" />
       <option name="MAIN_CLASS_NAME" value="product.transform.DefaultProductRecordTransformerTest" />
-      <option name="METHOD_NAME" value="transformsProductId" />
+      <option name="METHOD_NAME" value="shouldTransformRegularSplitCalculatorPriceWithLargeQuantity" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FlagsParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DefaultProductRecordTransformerTest.shouldTransformRegularSplitPrice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swiftly-product" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="product.parse.unit.*" />
+          <option name="PATTERN" value="product.transform.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="product.parse.unit" />
-      <option name="MAIN_CLASS_NAME" value="product.parse.unit.FlagsParserTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="product.transform" />
+      <option name="MAIN_CLASS_NAME" value="product.transform.DefaultProductRecordTransformerTest" />
+      <option name="METHOD_NAME" value="shouldTransformRegularSplitPrice" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DefaultProductRecordTransformerTest.shouldTransformRegularSplitPriceWithLargeQuantity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="swiftly-product" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="product.transform.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="product.transform" />
+      <option name="MAIN_CLASS_NAME" value="product.transform.DefaultProductRecordTransformerTest" />
+      <option name="METHOD_NAME" value="shouldTransformRegularSplitPriceWithLargeQuantity" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -157,10 +166,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.DefaultProductRecordTransformerTest" />
-        <item itemvalue="JUnit.DefaultProductRecordTransformerTest.appliesTaxRateWhenFlagIsTrue" />
-        <item itemvalue="JUnit.DefaultProductRecordTransformerTest.transformsProductId" />
-        <item itemvalue="JUnit.All in swiftly-product" />
-        <item itemvalue="JUnit.FlagsParserTest" />
+        <item itemvalue="JUnit.DefaultProductRecordTransformerTest.shouldTransformRegularSplitCalculatorPriceWithLargeQuantity" />
+        <item itemvalue="JUnit.DefaultProductRecordTransformerTest.shouldTransformRegularSplitPriceWithLargeQuantity" />
+        <item itemvalue="JUnit.DefaultProductRecordTransformerTest.shouldTransformRegularSplitCalculatorPrice" />
+        <item itemvalue="JUnit.DefaultProductRecordTransformerTest.shouldTransformRegularSplitPrice" />
       </list>
     </recent_temporary>
   </component>
@@ -172,7 +181,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616100972853</updated>
-      <workItem from="1616100974932" duration="21583000" />
+      <workItem from="1616100974932" duration="24389000" />
     </task>
     <servers />
   </component>
@@ -188,14 +197,14 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/product/transform/DefaultProductRecordTransformer.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="8" />
+          <url>file://$PROJECT_DIR$/src/test/java/product/transform/DefaultProductRecordTransformerTest.java</url>
+          <line>123</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/product/transform/DefaultProductRecordTransformer.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="9" />
+          <line>59</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
