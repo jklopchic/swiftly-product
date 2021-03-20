@@ -13,10 +13,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -58,6 +58,7 @@
       <recent name="" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="product.transform" />
       <recent name="product.parse" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -171,7 +172,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616100972853</updated>
-      <workItem from="1616100974932" duration="33475000" />
+      <workItem from="1616100974932" duration="34334000" />
     </task>
     <servers />
   </component>
@@ -185,11 +186,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/product/parse/unit/IntegerParser.java</url>
           <line>13</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/product/transform/DefaultProductRecordTransformerTest.java</url>
-          <line>125</line>
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/product/ProductCatalogIntegrationService.java</url>
