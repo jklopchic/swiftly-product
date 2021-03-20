@@ -1,77 +1,85 @@
 package product.model;
 
+import com.google.common.collect.Maps;
+
+import java.util.Map;
+
+import static product.model.ProductInputField.*;
+
 public class ProductInputData {
+    
+    private final Map<ProductInputField, String> stringFieldValues = Maps.newHashMap();
+    private final Map<ProductInputField, Integer> integerFieldValues = Maps.newHashMap();
+    private final Map<ProductInputField, boolean[]> flagsFieldValues = Maps.newHashMap();
+        
+    public static ProductInputData construct() {
+        return new ProductInputData();
+    }
+    private ProductInputData() {
+        
+    }
+    
+    public int getIntegerValue(final ProductInputField key) {
+        return integerFieldValues.get(key);
+    }
 
-    private final int productId;
-    private final String productDescription;
-    private final int eachPrice;
-    private final int saleEachPrice;
-    private final int regularSplitPrice;
-    private final int saleSplitPrice;
-    private final int regularSplitQuantity;
-    private final int saleSplitQuantity;
-    private final boolean[] flags;
-    private final String productSize;
+    public String getStringValue(final ProductInputField key) {
+        return stringFieldValues.get(key);
+    }
 
-    public ProductInputData(final int productId,
-                            final String productDescription,
-                            final int eachPrice,
-                            final int saleEachPrice,
-                            final int regularSplitPrice,
-                            final int saleSplitPrice,
-                            final int regularSplitQuantity,
-                            final int saleSplitQuantity,
-                            final boolean[] flags,
-                            final String productSize) {
-        this.productId = productId;
-        this.productDescription = productDescription;
-        this.eachPrice = eachPrice;
-        this.saleEachPrice = saleEachPrice;
-        this.regularSplitPrice = regularSplitPrice;
-        this.saleSplitPrice = saleSplitPrice;
-        this.regularSplitQuantity = regularSplitQuantity;
-        this.saleSplitQuantity = saleSplitQuantity;
-        this.flags = flags;
-        this.productSize = productSize;
+    public boolean[] getFlagsValue(final ProductInputField key) {
+        return flagsFieldValues.get(key);
+    }
+    
+    public void setIntegerValue(final ProductInputField field, final int value) {
+        integerFieldValues.put(field, value);
+    }
+
+    public void setStringValue(final ProductInputField field, final String value) {
+        stringFieldValues.put(field, value);
+    }
+
+    public void setFlagsValues(final ProductInputField field, final boolean[] value) {
+        flagsFieldValues.put(field, value);
     }
 
     public int getProductId() {
-        return productId;
+        return getIntegerValue(ProductId);
     }
 
     public String getProductDescription() {
-        return productDescription;
+        return getStringValue(ProductDescription);
     }
 
     public int getEachPrice() {
-        return eachPrice;
+        return getIntegerValue(RegularEachPrice);
     }
 
     public int getSaleEachPrice() {
-        return saleEachPrice;
+        return getIntegerValue(SaleEachPrice);
     }
 
     public int getRegularSplitPrice() {
-        return regularSplitPrice;
+        return getIntegerValue(RegularSplitPrice);
     }
 
     public int getSaleSplitPrice() {
-        return saleSplitPrice;
+        return getIntegerValue(SaleSplitPrice);
     }
 
     public int getRegularSplitQuantity() {
-        return regularSplitQuantity;
+        return getIntegerValue(RegularSplitQuantity);
     }
 
     public int getSaleSplitQuantity() {
-        return saleSplitQuantity;
+        return getIntegerValue(SaleSplitQuantity);
     }
 
     public boolean[] getFlags() {
-        return flags;
+        return getFlagsValue(Flags);
     }
 
     public String getProductSize() {
-        return productSize;
+        return getStringValue(ProductSize);
     }
 }

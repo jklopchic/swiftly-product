@@ -4,29 +4,20 @@ public class ProductRecord {
 
     private final Integer productId;
     private final String description;
-    private final String displayPrice;
-    private final Double calculatorPrice;
-    private final String saleDisplayPrice;
-    private final Double saleCalculatorPrice;
+    private final ProductPrices prices; 
     private final UnitOfMeasure unitOfMeasure;
     private final String productSize;
     private final Double taxRate;
 
     public ProductRecord(final Integer productId,
                          final String description,
-                         final String displayPrice,
-                         final Double calculatorPrice,
-                         final String saleDisplayPrice,
-                         final Double saleCalculatorPrice,
+                         final ProductPrices prices,
                          final UnitOfMeasure unitOfMeasure,
                          final String productSize,
                          final Double taxRate) {
         this.productId = productId;
         this.description = description;
-        this.displayPrice = displayPrice;
-        this.calculatorPrice = calculatorPrice;
-        this.saleDisplayPrice = saleDisplayPrice;
-        this.saleCalculatorPrice = saleCalculatorPrice;
+        this.prices = prices;
         this.unitOfMeasure = unitOfMeasure;
         this.productSize = productSize;
         this.taxRate = taxRate;
@@ -39,21 +30,23 @@ public class ProductRecord {
     public String getDescription() {
         return description;
     }
+    
+    public ProductPrices getPrices() { return prices; }
 
     public String getDisplayPrice() {
-        return displayPrice;
+        return prices.getDisplayPrice();
     }
 
     public Double getCalculatorPrice() {
-        return calculatorPrice;
+        return prices.getCalculatorPrice();
     }
 
     public String getSaleDisplayPrice() {
-        return saleDisplayPrice;
+        return prices.getSaleDisplayPrice();
     }
 
     public Double getSaleCalculatorPrice() {
-        return saleCalculatorPrice;
+        return prices.getSaleCalculatorPrice();
     }
 
     public UnitOfMeasure getUnitOfMeasure() {
@@ -71,10 +64,7 @@ public class ProductRecord {
     public static class Builder {
         Integer productId;
         String description;
-        String displayPrice;
-        Double calculatorPrice;
-        String saleDisplayPrice;
-        Double saleCalculatorPrice;
+        ProductPrices prices; 
         UnitOfMeasure unitOfMeasure;
         String productSize;
         Double taxRate;
@@ -82,10 +72,7 @@ public class ProductRecord {
         public ProductRecord build() {
             return new ProductRecord(productId,
                     description,
-                    displayPrice,
-                    calculatorPrice,
-                    saleDisplayPrice,
-                    saleCalculatorPrice,
+                    prices,
                     unitOfMeasure,
                     productSize,
                     taxRate);
@@ -101,23 +88,8 @@ public class ProductRecord {
             return this;
         }
 
-        public Builder displayPrice(final String displayPrice) {
-            this.displayPrice = displayPrice;
-            return this;
-        }
-
-        public Builder calculatorPrice(final Double calculatorPrice) {
-            this.calculatorPrice = calculatorPrice;
-            return this;
-        }
-
-        public Builder saleDisplayPrice(final String saleDisplayPrice) {
-            this.saleDisplayPrice = saleDisplayPrice;
-            return this;
-        }
-
-        public Builder saleCalculatorPrice(final Double saleCalculatorPrice) {
-            this.saleCalculatorPrice = saleCalculatorPrice;
+        public Builder prices(final ProductPrices prices) {
+            this.prices = prices;
             return this;
         }
 

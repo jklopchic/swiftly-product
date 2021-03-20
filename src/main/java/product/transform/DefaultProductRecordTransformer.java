@@ -1,11 +1,14 @@
 package product.transform;
 
 import product.model.ProductInputData;
+import product.model.ProductPrices;
 import product.model.ProductRecord;
 import product.model.UnitOfMeasure;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+
+import static product.model.ProductInputField.*;
 
 public class DefaultProductRecordTransformer implements ProductRecordTransformer {
 
@@ -22,53 +25,56 @@ public class DefaultProductRecordTransformer implements ProductRecordTransformer
 
     @Override
     public ProductRecord transform(final ProductInputData input) {
-        final ProductRecord.Builder builder = new ProductRecord.Builder();
+        final ProductRecord.Builder record = new ProductRecord.Builder();
 
-        builder.productId(input.getProductId());
+        record.productId(input.getIntegerValue(ProductId));
 
-        builder.description(input.getProductDescription());
+        record.description(input.getStringValue(ProductDescription));
 
-        setRegularPrice(builder, input);
+        record.prices(getPrices(input));
 
-        setSalePrice(builder, input);
+        record.unitOfMeasure(getUnitOfMeasure(input.getFlags()));
 
-        builder.unitOfMeasure(getUnitOfMeasure(input.getFlags()));
+        record.productSize(input.getStringValue(ProductSize));
 
-        builder.productSize(input.getProductSize());
+        record.taxRate(getTaxRate(input.getFlags()));
 
-        builder.taxRate(getTaxRate(input.getFlags()));
-
-        return builder.build();
+        return record.build();
     }
 
-    private void setRegularPrice(final ProductRecord.Builder builder, final ProductInputData inputData) {
+    private ProductPrices getPrices(final ProductInputData inputData) {
+        String displayPrice = "";
+        double calculatorPrice = 0;
+        String saleDisplayPrice = "";
+        double saleCalculatorPrice = 0;
+        
         if(inputData.getEachPrice() != 0) {
             final double eachPrice = inputData.getEachPrice() / 100.00;
 
-            builder.displayPrice(formatEaches(eachPrice));
-            builder.calculatorPrice(eachPrice);
+            displayPrice = formatEaches(eachPrice);
+            calculatorPrice = eachPrice;
         } else if(inputData.getRegularSplitPrice() != 0) {
             final double splitPrice = inputData.getRegularSplitPrice() / 100.00;
             final double calculatedSplitPrice = round(splitPrice / inputData.getRegularSplitQuantity(), 4);
 
-            builder.displayPrice(formatSplit(splitPrice, inputData.getRegularSplitQuantity()));
-            builder.calculatorPrice(calculatedSplitPrice);
+            displayPrice = formatSplit(splitPrice, inputData.getRegularSplitQuantity());
+            calculatorPrice = calculatedSplitPrice;
         }
-    }
 
-    private void setSalePrice(final ProductRecord.Builder builder, final ProductInputData inputData) {
         if(inputData.getSaleEachPrice() != 0) {
             final double eachPrice = inputData.getSaleEachPrice() / 100.00;
 
-            builder.saleDisplayPrice(formatEaches(eachPrice));
-            builder.saleCalculatorPrice(eachPrice);
+            saleDisplayPrice = formatEaches(eachPrice);
+            saleCalculatorPrice = eachPrice;
         } else if(inputData.getSaleSplitPrice() != 0) {
             final double splitPrice = inputData.getSaleSplitPrice() / 100.00;
             final double calculatedSplitPrice = round(splitPrice / inputData.getSaleSplitQuantity(), 4);
 
-            builder.saleDisplayPrice(formatSplit(splitPrice, inputData.getSaleSplitQuantity()));
-            builder.saleCalculatorPrice(calculatedSplitPrice);
+            saleDisplayPrice = formatSplit(splitPrice, inputData.getSaleSplitQuantity());
+            saleCalculatorPrice = calculatedSplitPrice;
         }
+        
+        return new ProductPrices(displayPrice, calculatorPrice, saleDisplayPrice, saleCalculatorPrice);
     }
 
     private String formatEaches(final double eachPrice) {

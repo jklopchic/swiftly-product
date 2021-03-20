@@ -13,9 +13,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
         <option value="Enum" />
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -50,8 +50,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="product.publish" />
       <recent name="product.transform" />
+      <recent name="product.publish" />
       <recent name="product.model" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -73,7 +73,7 @@
       <recent name="product.parse" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.IntegerParserTest.parserShouldParseNegative">
+  <component name="RunManager" selected="JUnit.All in swiftly-product">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="product.Main" />
       <module name="swiftly-product" />
@@ -110,7 +110,7 @@
       <module name="swiftly-product" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="product.transform.*" />
+          <option name="PATTERN" value="product.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -125,7 +125,7 @@
       <module name="swiftly-product" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="product.transform.*" />
+          <option name="PATTERN" value="product.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -155,8 +155,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.IntegerParserTest.parserShouldParseNegative" />
         <item itemvalue="JUnit.All in swiftly-product" />
+        <item itemvalue="JUnit.IntegerParserTest.parserShouldParseNegative" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.DefaultProductRecordTransformerTest" />
         <item itemvalue="JUnit.DefaultProductRecordTransformerTest.shouldTransformRegularSplitCalculatorPriceWithLargeQuantity" />
@@ -171,7 +171,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616100972853</updated>
-      <workItem from="1616100974932" duration="28742000" />
+      <workItem from="1616100974932" duration="33161000" />
     </task>
     <servers />
   </component>
@@ -188,7 +188,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/product/transform/DefaultProductRecordTransformerTest.java</url>
-          <line>123</line>
+          <line>124</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -197,7 +197,7 @@
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/product/parse/DefaultProductImportParser.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/product/parse/DefaultProductInputParser.java</url>
           <line>51</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>

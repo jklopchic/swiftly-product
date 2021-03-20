@@ -11,6 +11,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.reset;
+import static product.model.ProductInputField.*;
 
 public class DefaultProductRecordTransformerTest {
 
@@ -32,7 +33,7 @@ public class DefaultProductRecordTransformerTest {
     public void transformsProductId() {
         final int expected = 1001;
 
-        given(inputData.getProductId()).willReturn(expected);
+        given(inputData.getIntegerValue(ProductId)).willReturn(expected);
 
         final int actual = transformer.transform(inputData).getProductId();
 
@@ -43,7 +44,7 @@ public class DefaultProductRecordTransformerTest {
     public void transformsProductDescription() {
         final String expected = "productDescription";
 
-        given(inputData.getProductDescription()).willReturn(expected);
+        given(inputData.getStringValue(ProductDescription)).willReturn(expected);
 
         final String actual = transformer.transform(inputData).getDescription();
 
@@ -54,7 +55,7 @@ public class DefaultProductRecordTransformerTest {
     public void transformsProductSize() {
         final String expected = "productSize";
 
-        given(inputData.getProductSize()).willReturn(expected);
+        given(inputData.getStringValue(ProductSize)).willReturn(expected);
 
         final String actual = transformer.transform(inputData).getProductSize();
 
